@@ -1,184 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MYSTERY SCENT</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Leaflet Routing Machine -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"
+    />
     <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
     <style>
-        #map {
-            height: 600px;
-            margin-top: 20px;
-            border-radius: 20px;
-        }
-        
-        .star {
-            color: gold;
-            /* Warna kuning untuk bintang */
-            font-size: 18px;
-        }
-        
-        #hospitalList {
-            margin-top: 20px;
-            padding: 0;
-        }
-        
-        #hospitalList li {
-            list-style: none;
-            margin-bottom: 10px;
-        }
+      #map {
+        height: 600px;
+        margin-top: 20px;
+        border-radius: 20px;
+      }
+
+      .star {
+        color: gold;
+        /* Warna kuning untuk bintang */
+        font-size: 18px;
+      }
+
+      #hospitalList {
+        margin-top: 20px;
+        padding: 0;
+      }
+
+      #hospitalList li {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+
+      /* Tampilan tombol List RS */
+
+      #nearest {
+        background-color: #ea1010;
+        /* Warna hijau */
+        color: rgb(254, 254, 254);
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      #nearest:hover {
+        background-color: #29a54a;
+        /* Warna hijau lebih gelap saat hover */
+      }
+      /* Tampilan tombol Cari Rute */
+
+      #calculate {
+        background-color: #ff1111;
+        /* Warna biru */
+        color: white;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      #calculate:hover {
+        background-color: #38bb52;
+        /* Warna biru lebih gelap saat hover */
+      }
+      img {
+        width: 200px;
+        cursor: pointer;
+      }
+
+      .container-central {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .container-content {
+        width: 220px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      .container-content:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      }
+
+      .container-content img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .container-content h1 {
+        font-size: 16px;
+        margin: 10px 0 4px;
+      }
+
+      .container-content h1:last-child {
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* POPUP */
+      dialog.popup {
+        border: none;
+        border-radius: 16px;
+        padding: 28px;
+        max-width: 600px; /* bigger popup */
+        width: 95%;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+
+        /* FORCE CENTER */
+        margin: auto;
+      }
+
+      dialog.popup::backdrop {
+        background: rgba(0, 0, 0, 0.65);
+      }
+
+      /* BIG IMAGE */
+      /* dialog.popup img {
+        width: 100%;
+        max-height: 70vh; 
+        object-fit: cover;
+
+        border-radius: 14px;
+        margin-bottom: 20px;
+        display: block;
+      } */
+
+      dialog.popup img {
+        display: block;
+        margin: 0 auto 20px;
+        width: 100%;
+        max-width: 500px; /* optional, keeps it neat */
+      }
+
+      /* BUTTON */
+      dialog.popup button {
+        background: #000;
+        color: #fff;
+        border: none;
+        padding: 12px 22px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+      }
     </style>
-    </style>
+  </head>
 
-    <style>
-        /* Tampilan tombol List RS */
-        
-        #nearest {
-            background-color: #ea1010;
-            /* Warna hijau */
-            color: rgb(254, 254, 254);
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        
-        #nearest:hover {
-            background-color: #29a54a;
-            /* Warna hijau lebih gelap saat hover */
-        }
-        /* Tampilan tombol Cari Rute */
-        
-        #calculate {
-            background-color: #ff1111;
-            /* Warna biru */
-            color: white;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        
-        #calculate:hover {
-            background-color: #38bb52;
-            /* Warna biru lebih gelap saat hover */
-        }
-    </style>
-
-
-</head>
-
-<body>
+  <body>
     <!-- =============== Navigation ================ -->
     <div class="">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="medkit-outline"></ion-icon>
-                        </span>
-                        <span class="title">HOME</span>
-                    </a>
-                </li>
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="medkit-outline"></ion-icon>
+              </span>
+              <span class="title">HOME</span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="Rute.html">
-                        <span class="icon">
-                            <ion-icon name="location-outline"></ion-icon>
-                        </span>
-                        <span class="title">MYSTERY SCENT</span>
-                    </a>
-                </li>
+          <li>
+            <a href="Rute.html">
+              <span class="icon">
+                <ion-icon name="location-outline"></ion-icon>
+              </span>
+              <span class="title">MYSTERY SCENT</span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="Informasi.html">
-                        <span class="icon">
-                            <ion-icon name="map-outline"></ion-icon>
-                        </span>
-                        <span class="title">INFORMATION</span>
-                    </a>
-                </li>
+          <li>
+            <a href="Informasi.html">
+              <span class="icon">
+                <ion-icon name="map-outline"></ion-icon>
+              </span>
+              <span class="title">INFORMATION</span>
+            </a>
+          </li>
 
-                <li>
-                    <a href="Daftarlist.html">
-                        <span class="icon">
-                            <ion-icon name="list-outline"></ion-icon>
-                        </span>
-                        <span class="title">TOP BRANDS</span>
-                    </a>
-                </li>
-            </ul>
+          <li>
+            <a href="Daftarlist.html">
+              <span class="icon">
+                <ion-icon name="list-outline"></ion-icon>
+              </span>
+              <span class="title">TOP BRANDS</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <div class="welcome-message text-center w-100">
+            <h3 class="fw-bolder mb-2">DETERMINE YOUR SECRET HERE</h3>
+          </div>
         </div>
 
-        <!-- ========================= Main ==================== -->
-        <div class="main">
-            <div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-                <div class="welcome-message text-center w-100">
-                    <h3 class="fw-bolder mb-2">DETERMINE YOUR SECRET HERE</h3>
-                </div>
+        <div class="m-5">
+          <header>
+            <div class="container px-5">
+              <div class="row justify-content-center">
+                <div class="col-lg-6"></div>
+              </div>
             </div>
+          </header>
 
-            <div class="m-5">
-                <header>
-                    <div class="container px-5">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                            </div>
-                        </div>
-                    </div>
-                </header>
-
-                <form id="searchForm">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col">
-                                <input id="inputRad" class="form-control" type="number" placeholder="Input Brands" />
-                            </div>
-                            <div class="col">
-                                <button id="nearest" type="button" class="btn btn-primary" onclick="listNearestHospitals()">
-                            Search
-                        </button>
-                            </div>
-                        </div>
-                        <div class="row ml-1 mt-3">
-                            <button id="calculate" type="button" class="btn btn-primary" onclick="calculateRoute()">
-                        Recommendations !
-                    </button>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="mt-4">
-                    <p>Best Seller : <span id="nearestHospital">-</span></p>
-                    <ul id="hospitalList"></ul>
+          <form id="searchForm">
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <input
+                    id="inputRad"
+                    class="form-control"
+                    type="number"
+                    placeholder="Input Brands"
+                  />
                 </div>
+                <div class="col">
+                  <button
+                    id="nearest"
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="listNearestHospitals()"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+              <div class="row ml-1 mt-3">
+                <button
+                  id="calculate"
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="calculateRoute()"
+                >
+                  Recommendations !
+                </button>
+              </div>
+            </div>
+          </form>
 
-                <div class="map-image-wrapper">
+          <div class="mt-4">
+            <p>Best Seller : <span id="nearestHospital">-</span></p>
+            <ul id="hospitalList"></ul>
+          </div>
+
+          <!-- <div class="map-image-wrapper">
                     <img src="img/misteri.jpeg" alt="Map Illustration" class="map-image">
-                </div>
+                </div> -->
+          <div class="container-central">
+            <div class="container-content">
+              <img
+                src="img/misteri.jpeg"
+                onclick="this.parentElement.querySelector('dialog').showModal()"
+              />
+              <h1>judul</h1>
+              <h1>harga</h1>
 
+              <dialog class="popup">
+                <img src="img/misteri.jpeg" style="width: 200px" />
+                <p>Detail produk 1</p>
+                <h3>Lilith & Eve Forbidden Fruit EDP 30ml</h3>
+                <p>
+                  Parfum ini secara luas dikenal sebagai versi terjangkau yang
+                  terinspirasi dari Maison Francis Kurkdjian (MFK) Baccarat
+                  Rouge 540. Wanginya didominasi oleh perpaduan manis dari
+                  saffron dan sentuhan kayu-kayuan (woody) yang khas.
+                </p>
+                <p>
+                  Forbidden Fruit memiliki profil aroma yang elegan, seksi, dan
+                  misterius. Secara keseluruhan, wanginya memberikan kesan mewah
+                  dan "mahal".
+                </p>
+
+                <p>
+                  <strong>Top Notes (Aroma Awal):</strong> Jasmine, Saffron,
+                  Orange, Marigold
+                </p>
+                <p>
+                  <strong>Heart Notes (Aroma Inti):</strong> Ambroxan, Evernyl
+                </p>
+                <p>
+                  <strong>Base Notes (Aroma Dasar):</strong> Cedarwood,
+                  Ambergris, Fir Balsam
+                </p>
+                <button onclick="this.closest('dialog').close()">Close</button>
+              </dialog>
             </div>
 
-            <!-- =========== Scripts =========  -->
-            <script src="assets/js/main.js"></script>
-            <script type="module" src="script.js"></script>
+            <div class="container-content">
+              <img
+                src="img/misteri.jpeg"
+                onclick="this.parentElement.querySelector('dialog').showModal()"
+                onclick="
+                  const d = this.nextElementSibling;
+                  d.showModal ? d.showModal() : d.setAttribute('open', '');
+                "
+              />
+              <h1>judul</h1>
+              <h1>harga</h1>
 
-            <!-- ====== ionicons ======= -->
-            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+              <dialog class="popup">
+                <img src="img/misteri.jpeg" style="width: 200px" />
+                <p>Detail produk 2</p>
+                <button onclick="this.closest('dialog').close()">Close</button>
+              </dialog>
+            </div>
+
+            <div class="container-content">
+              <img
+                src="img/misteri.jpeg"
+                onclick="this.parentElement.querySelector('dialog').showModal()"
+              />
+              <h1>judul</h1>
+              <h1>harga</h1>
+
+              <dialog class="popup">
+                <img src="img/misteri.jpeg" style="width: 200px" />
+                <p>Detail produk 3</p>
+                <button onclick="this.closest('dialog').close()">Close</button>
+              </dialog>
+            </div>
+
+            <div class="container-content">
+              <img
+                src="img/misteri.jpeg"
+                onclick="this.parentElement.querySelector('dialog').showModal()"
+              />
+              <h1>judul</h1>
+              <h1>harga</h1>
+
+              <dialog class="popup">
+                <img src="img/misteri.jpeg" style="width: 200px" />
+                <p>Detail produk 4</p>
+                <button onclick="this.closest('dialog').close()">Close</button>
+              </dialog>
+            </div>
+          </div>
         </div>
-</body>
+      </div>
+      <!-- =========== Scripts =========  -->
+      <script src="assets/js/main.js"></script>
+      <script type="module" src="script.js"></script>
 
+      <!-- ====== ionicons ======= -->
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      ></script>
+    </div>
+  </body>
 </html>
