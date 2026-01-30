@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYSTERY SCENT</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+    <style>
+        #map {
+            height: 600px;
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+        
+        .star {
+            color: gold;
+            /* Warna kuning untuk bintang */
+            font-size: 18px;
+        }
+        
+        #hospitalList {
+            margin-top: 20px;
+            padding: 0;
+        }
+        
+        #hospitalList li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+    </style>
+    </style>
+
+    <style>
+        /* Tampilan tombol List RS */
+        
+        #nearest {
+            background-color: #ea1010;
+            /* Warna hijau */
+            color: rgb(254, 254, 254);
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        #nearest:hover {
+            background-color: #29a54a;
+            /* Warna hijau lebih gelap saat hover */
+        }
+        /* Tampilan tombol Cari Rute */
+        
+        #calculate {
+            background-color: #ff1111;
+            /* Warna biru */
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        #calculate:hover {
+            background-color: #38bb52;
+            /* Warna biru lebih gelap saat hover */
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="medkit-outline"></ion-icon>
+                        </span>
+                        <span class="title">HOME</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Rute.html">
+                        <span class="icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </span>
+                        <span class="title">MYSTERY SCENT</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Informasi.html">
+                        <span class="icon">
+                            <ion-icon name="map-outline"></ion-icon>
+                        </span>
+                        <span class="title">INFORMATION</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Daftarlist.html">
+                        <span class="icon">
+                            <ion-icon name="list-outline"></ion-icon>
+                        </span>
+                        <span class="title">TOP BRANDS</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="welcome-message text-center w-100">
+                    <h3 class="fw-bolder mb-2">DETERMINE YOUR SECRET HERE</h3>
+                </div>
+            </div>
+
+            <div class="m-5">
+                <header>
+                    <div class="container px-5">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <form id="searchForm">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <input id="inputRad" class="form-control" type="number" placeholder="Input Brands" />
+                            </div>
+                            <div class="col">
+                                <button id="nearest" type="button" class="btn btn-primary" onclick="listNearestHospitals()">
+                            Search
+                        </button>
+                            </div>
+                        </div>
+                        <div class="row ml-1 mt-3">
+                            <button id="calculate" type="button" class="btn btn-primary" onclick="calculateRoute()">
+                        Recommendations !
+                    </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="mt-4">
+                    <p>Best Seller : <span id="nearestHospital">-</span></p>
+                    <ul id="hospitalList"></ul>
+                </div>
+
+                <div class="map-image-wrapper">
+                    <img src="img/misteri.jpeg" alt="Map Illustration" class="map-image">
+                </div>
+
+            </div>
+
+            <!-- =========== Scripts =========  -->
+            <script src="assets/js/main.js"></script>
+            <script type="module" src="script.js"></script>
+
+            <!-- ====== ionicons ======= -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </div>
+</body>
+
+</html>
