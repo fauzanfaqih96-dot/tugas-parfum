@@ -1,1129 +1,1062 @@
 <!doctype html>
 <html lang="id">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOP BRANDS</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 
     <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-      }
-
-      .container-central {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 12px;
-        padding: 12px;
-      }
-
-      /* Search Form */
-      #searchForm {
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 30px;
-      }
-
-      #searchForm input {
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        padding: 12px;
-        font-size: 1rem;
-      }
-
-      #searchForm button {
-        border-radius: 8px;
-        padding: 12px 24px;
-        font-weight: 500;
-        width: 100%;
-      }
-
-      .container-content {
-        background: #fff;
-        border-radius: 12px;
-        padding: 10px;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-        text-align: center;
-      }
-
-      .container-content img {
-        width: 100%;
-        aspect-ratio: 4/3;
-        height: 140px;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-
-      .container-content h1 {
-        font-size: 15px;
-        margin: 6px 0;
-      }
-
-      dialog.popup {
-        margin: auto;
-        width: 94%;
-        max-width: 520px;
-        border: none;
-        border-radius: 14px;
-        padding: 16px;
-      }
-
-      dialog.popup img {
-        display: block;
-        margin: 0 auto 12px;
-        width: 100%;
-        max-height: 65vh;
-        object-fit: cover;
-        border-radius: 12px;
-      }
-
-      div img {
-        width: 600px;
-        aspect-ratio: 4/3;
-      }
-
-      dialog.popup button {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-      }
-
-      /* Mobile Responsive */
-      @media (max-width: 768px) {
-        .navigation {
-          width: 0;
-          border-right: none;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
-        .navigation.active {
-          width: 240px;
-          box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
         }
-
-        .main {
-          margin-left: 0;
+        
+        .container-central {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            padding: 12px;
         }
-
-        .navigation.active ~ .main {
-          margin-left: 0;
-        }
-
-        .container {
-          padding: 15px;
-        }
-
+        /* Search Form */
+        
         #searchForm {
-          padding: 15px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
-
-        #searchForm .row {
-          flex-direction: column;
+        
+        #searchForm input {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 1rem;
         }
-
-        #searchForm .col {
-          max-width: 100%;
-          flex: 0 0 100%;
-          margin-bottom: 10px;
-        }
-
+        
         #searchForm button {
-          margin-top: 0;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: 500;
+            width: 100%;
         }
-
-        .hospital-item {
-          padding: 15px;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .hospital-item img {
-          max-width: 100%;
-          height: auto;
-        }
-
-        .hospital-list h1 {
-          font-size: 1.3rem;
-        }
-
-        .hospital-item h3 {
-          font-size: 1.1rem;
-        }
-
-        .hospital-item p {
-          font-size: 0.9rem;
-        }
-      }
-      @media (min-width: 768px) {
-        .container-central {
-          gap: 20px;
-          padding: 20px;
-        }
-
-        .container-content img {
-          height: 180px;
-        }
-        div img {
-          width: 450px;
-          aspect-ratio: 16/9;
-        }
-      }
-      @media (max-width: 480px) {
-        .topbar {
-          padding: 10px 15px;
-        }
-
-        .hospital-list {
-          padding: 15px;
-        }
-
-        .price {
-          font-size: 1rem;
-        }
-
-        .new-price {
-          font-size: 1.1rem;
-        }
-
-        /* GAMBAR DIPERBESAR */
-        .container-content img,
-        div img {
-          width: 400px !important;
-          height: 500px !important;
-          aspect-ratio: 9/16;
-          object-fit: cover;
-          border-radius: 12px;
-        }
-
-        /* LAYOUT MOBILE */
-        .container-central {
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-          padding: 12px;
-        }
-
-        /* CARD JADI LEBIH LEGA */
+        
         .container-content {
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          padding: 12px;
+            background: #000000;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+            text-align: center;
         }
-
-        /* TEXT AREA */
+        
+        .container-content img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
         .container-content h1 {
-          font-size: 15px;
-          text-align: left;
+            font-size: 15px;
+            margin: 6px 0;
         }
-
-        /* POPUP IKUT BESAR */
+        
+        dialog.popup {
+            margin: auto;
+            width: 94%;
+            max-width: 520px;
+            border: none;
+            border-radius: 14px;
+            padding: 16px;
+        }
+        
         dialog.popup img {
-          width: 160px !important;
-          height: 200px !important;
+            display: block;
+            margin: 0 auto 12px;
+            width: 100%;
+            max-height: 65vh;
+            object-fit: cover;
+            border-radius: 12px;
         }
-      }
+        
+        div img {
+            width: 600px;
+            aspect-ratio: 4/3;
+        }
+        
+        dialog.popup button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+        }
+        /* Mobile Responsive */
+        
+        @media (max-width: 768px) {
+            .navigation {
+                width: 0;
+                border-right: none;
+            }
+            .navigation.active {
+                width: 240px;
+                box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .main {
+                margin-left: 0;
+            }
+            .navigation.active~.main {
+                margin-left: 0;
+            }
+            .container {
+                padding: 15px;
+            }
+            #searchForm {
+                padding: 15px;
+            }
+            #searchForm .row {
+                flex-direction: column;
+            }
+            #searchForm .col {
+                max-width: 100%;
+                flex: 0 0 100%;
+                margin-bottom: 10px;
+            }
+            #searchForm button {
+                margin-top: 0;
+            }
+            .hospital-item {
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+            }
+            .hospital-item img {
+                max-width: 100%;
+                height: auto;
+            }
+            .hospital-list h1 {
+                font-size: 1.3rem;
+            }
+            .hospital-item h3 {
+                font-size: 1.1rem;
+            }
+            .hospital-item p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container-central {
+                gap: 20px;
+                padding: 20px;
+            }
+            .container-content img {
+                height: 180px;
+            }
+            div img {
+                width: 450px;
+                aspect-ratio: 4/3;
+            }
+            .price {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+            }
+            .old-price {
+                text-decoration: line-through;
+                color: #999;
+            }
+            .discount-price {
+                color: #e53935;
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .topbar {
+                padding: 10px 15px;
+            }
+            .hospital-list {
+                padding: 15px;
+            }
+            .price {
+                font-size: 1rem;
+            }
+            .new-price {
+                font-size: 1.1rem;
+            }
+            /* GAMBAR DIPERBESAR */
+            .container-content img,
+            div img {
+                width: 400px !important;
+                height: 500px !important;
+                aspect-ratio: 9/16;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+            /* LAYOUT MOBILE */
+            .container-central {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                padding: 12px;
+            }
+            /* CARD JADI LEBIH LEGA */
+            .container-content {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 12px;
+            }
+            /* TEXT AREA */
+            .container-content h1 {
+                font-size: 15px;
+                text-align: left;
+            }
+            /* POPUP IKUT BESAR */
+            dialog.popup img {
+                width: 160px !important;
+                height: 200px !important;
+            }
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- =============== Navigation ================ -->
     <div class="">
-      <div class="navigation">
-        <ul>
-          <li>
-            <a href="index.html">
-              <span class="icon">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
                 <ion-icon name="home-outline"></ion-icon>
               </span>
-              <span class="title">HOME</span>
-            </a>
-          </li>
-          <li>
-            <a href="Rute.html">
-              <span class="icon">
+                        <span class="title">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Rute.html">
+                        <span class="icon">
                 <ion-icon name="trophy-outline"></ion-icon>
               </span>
-              <span class="title">TOP BRANDS</span>
-            </a>
-          </li>
-          <li>
-            <a href="Informasi.html">
-              <span class="icon">
+                        <span class="title">TOP BRANDS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Informasi.html">
+                        <span class="icon">
                 <ion-icon name="bulb-outline"></ion-icon>
               </span>
-              <span class="title">INFORMATION</span>
-            </a>
-          </li>
-          <li>
-            <a href="Daftarlist.html">
-              <span class="icon">
+                        <span class="title">INFORMATION</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Daftarlist.html">
+                        <span class="icon">
                 <ion-icon name="trending-up-outline"></ion-icon>
               </span>
-              <span class="title">TRENDING PRODUCTS</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="main">
-        <div class="topbar">
-          <div class="toggle">
-            <ion-icon name="menu-outline"></ion-icon>
-          </div>
+                        <span class="title">TRENDING PRODUCTS</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="container">
-          <!-- Search Form -->
-          <form id="searchForm" onsubmit="return false;">
-            <div class="form-group">
-              <div class="row">
-                <div class="col">
-                  <input
-                    id="inputSearch"
-                    class="form-control"
-                    type="text"
-                    placeholder="Search brands, products, or notes..."
-                  />
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
                 </div>
-                <div class="col-auto">
-                  <button
-                    id="searchBtn"
-                    type="button"
-                    class="btn btn-primary"
-                    onclick="searchProducts()"
-                  >
+            </div>
+            <div class="container">
+                <!-- Search Form -->
+                <form id="searchForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <input id="inputSearch" class="form-control" type="text" placeholder="Search brands, products, or notes..." />
+                            </div>
+                            <div class="col-auto">
+                                <button id="searchBtn" type="button" class="btn btn-primary" onclick="searchProducts()">
                     Search
                   </button>
-                </div>
-              </div>
-            </div>
-          </form>
-          <div class="hospital-list">
-            <h1>TRENDING PRODUCTS</h1>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="hospital-list">
+                    <h1>TRENDING PRODUCTS</h1>
 
-            <div id="productList">
-              <!-- Products will be displayed here -->
-              <div
-                class="hospital-item"
-                data-keywords="lilith eve forbidden fruit edp saffron woody jasmine orange marigold ambroxan evernyl cedarwood ambergris fir balsam"
-              >
-                <img
-                  src="img/forbid.jpg"
-                  alt="Lilith & Eve Forbidden Fruit EDP 30ml"
-                />
-                <div>
-                  <h3>Lilith & Eve Forbidden Fruit EDP 30ml</h3>
-                  <p>
-                    Parfum ini secara luas dikenal sebagai versi terjangkau yang
-                    terinspirasi dari Maison Francis Kurkdjian (MFK) Baccarat
-                    Rouge 540. Wanginya didominasi oleh perpaduan manis dari
-                    saffron dan sentuhan kayu-kayuan (woody) yang khas.
-                  </p>
-                  <p>
-                    Forbidden Fruit memiliki profil aroma yang elegan, seksi,
-                    dan misterius. Secara keseluruhan, wanginya memberikan kesan
-                    mewah dan "mahal".
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Jasmine, Saffron,
-                    Orange, Marigold
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Ambroxan, Evernyl
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Cedarwood,
-                    Ambergris, Fir Balsam
-                  </p>
-                  <hr />
-                  <p class="price"><strong>Harga:</strong> Rp 93.000</p>
-                </div>
-              </div>
+                    <div id="productList">
+                        <!-- Products will be displayed here -->
+                        <div class="hospital-item" data-keywords="lilith eve forbidden fruit edp saffron woody jasmine orange marigold ambroxan evernyl cedarwood ambergris fir balsam">
+                            <img src="assets/img/forbid.jpg" alt="LILITH & EVE FORBIDDEN FRUIT EDP 30ML" />
+                            <div>
 
-              <div
-                class="hospital-item"
-                data-keywords="lilith eve garden eden edp fresh clean floral bergamot lemon lily valley jasmine rose musk sandalwood vanilla"
-              >
-                <img
-                  src="img/garden eden.jpg"
-                  alt="Lilith & Eve Garden of Eden EDP 30ml"
-                />
-                <div>
-                  <h3>Lilith & Eve Garden of Eden EDP 30ml</h3>
-                  <p>
-                    Lilith & Eve Garden of Eden adalah varian yang sangat
-                    populer bagi pecinta aroma segar dan bersih.
-                  </p>
-                  <p>
-                    Jika Forbidden Fruit adalah sisi "gelap" dan misterius,
-                    Garden of Eden adalah sisi "terang" yang murni, polos, dan
-                    feminin.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Bergamot dan Lemon
-                    (memberikan kesegaran citrus yang ringan dan menyegarkan).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Lily of the
-                    Valley, Jasmine, dan Rose (dominasi bunga-bunga putih dan
-                    lembut memberikan kesan sangat feminin dan murni).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Sandalwood,
-                    dan sedikit Vanilla (memberikan ketahanan dan sentuhan
-                    creamy tanpa terlalu manis).
-                  </p>
-                  <hr />
-                  <p class="price"><strong>Harga:</strong> Rp 93.000</p>
-                </div>
-              </div>
+                                <h3>LILITH & EVE FORBIDDEN FRUIT EDP 30ML</h3>
 
-              <div
-                class="hospital-item"
-                data-keywords="lilith eve lovely night edp rose oud patchouli amber vanilla spicy sweet floral"
-              >
-                <img
-                  src="assets/img/lonely night.jpg"
-                  alt="Lilith & Eve Lovely Night EDP 30ml"
-                />
-                <div>
-                  <h3>Lilith & Eve Lovely Night EDP 30ml</h3>
-                  <p>
-                    Lovely Night adalah varian yang paling "sensual" dan "dark"
-                    di antara lini Lilith & Eve lainnya. Cocok untuk malam hari
-                    dan acara-acara formal.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Rose dan Saffron
-                    (kombinasi ini memberikan kesan mewah dan misterius).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Oud, Patchouli,
-                    dan Amber (aroma inti yang kuat, berkarakter, dan berani).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Vanilla,
-                    dan Woody Notes (memberikan kesan hangat dan tahan lama
-                    dengan sedikit manis di akhir).
-                  </p>
-                  <hr />
-                  <p class="price"><strong>Harga:</strong> Rp 93.000</p>
-                </div>
-              </div>
+                                <p>
+                                    Parfum ini secara luas dikenal sebagai versi terjangkau yang terinspirasi dari Maison Francis Kurkdjian (MFK) Baccarat Rouge 540. Wanginya didominasi oleh perpaduan manis dari saffron dan sentuhan kayu-kayuan (woody) yang khas.
+                                </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="lilith eve dark eden edp oud rose leather amber spicy oriental woody"
-              >
-                <img
-                  src="img/dark eden.jpg"
-                  alt="Lilith & Eve Dark Eden EDP 30ml"
-                />
-                <div>
-                  <h3>Lilith & Eve Dark Eden EDP 30ml</h3>
-                  <p>
-                    Dark Eden adalah versi yang lebih "gelap" dan mistis dari
-                    Garden of Eden. Ia memiliki karakter yang jauh lebih
-                    oriental, spicy, dan woody.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Saffron, Pink
-                    Pepper, dan Bergamot (awal yang spicy dan sedikit
-                    menyengat).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Oud, Rose, dan
-                    Leather (kombinasi oud dan rose memberikan nuansa oriental
-                    yang kuat, sentuhan leather menambah kesan maskulin).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Amber, Patchouli,
-                    dan Musk (memberikan kehangatan yang dalam dan tahan lama).
-                  </p>
-                  <hr />
-                  <p class="price"><strong>Harga:</strong> Rp 93.000</p>
-                </div>
-              </div>
+                                <p>
+                                    Forbidden Fruit memiliki profil aroma yang elegan, seksi, dan misterius. Secara keseluruhan, wanginya memberikan kesan mewah dan "mahal".                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="lilith eve lost paradise edp fruity vanilla musk peach raspberry strawberry amber woody"
-              >
-                <img
-                  src="img/lost parad.jpg"
-                  alt="Lilith & Eve Lost Paradise EDP 30ml"
-                />
-                <div>
-                  <h3>Lilith & Eve Lost Paradise EDP 30ml</h3>
-                  <p>
-                    Lost Paradise memberikan nuansa yang lebih playful, fresh,
-                    dan manis dibandingkan varian lainnya.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Peach, Raspberry,
-                    dan Strawberry (fruity notes yang manis dan juicy memberikan
-                    kesan ceria dan muda).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Rose, Jasmine,
-                    dan White Floral (memberikan sentuhan floral yang lembut dan
-                    feminin).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Musk,
-                    Amber, dan Woody Notes (base yang hangat dan manis
-                    memberikan kesan cozy dan tahan lama).
-                  </p>
-                  <hr />
-                  <p class="price"><strong>Harga:</strong> Rp 93.000</p>
-                </div>
-              </div>
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Jasmine, Saffron, Orange, Marigold                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline divine edp floral fresh orange neroli lily valley muguet jasmine rose musk vanilla powdery"
-              >
-                <img src="img/divine.jpg" alt="Evangeline Divine EDP 100ml" />
-                <div>
-                  <h3>Evangeline Divine EDP 100ml</h3>
-                  <p>
-                    Evangeline Divine adalah parfum yang memiliki aroma floral
-                    fresh dengan kesan feminin, bersih, dan elegan.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Orange Blossom dan
-                    Neroli (memberikan kesegaran bunga citrus di awal).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Lily of the
-                    Valley (Muguet), Jasmine, dan Rose (dominasi wangi bunga
-                    putih yang bersih dan lembut).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk dan Vanilla
-                    (memberikan ketahanan serta sentuhan powdery yang halus dan
-                    creamy).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <p>
+                                    <strong>Heart Notes (Aroma Inti):</strong> Ambroxan, Evernyl                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline miss rose edp floral rose jasmine orange blossom musk sandalwood amber"
-              >
-                <img
-                  src="img/miss rose.jpg"
-                  alt="Evangeline Miss Rose EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Miss Rose EDP 100ml</h3>
-                  <p>
-                    Miss Rose adalah varian yang didominasi oleh aroma bunga
-                    mawar yang segar, elegan, dan feminin.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Bergamot dan Orange
-                    Blossom (memberikan kesegaran citrus yang ringan dan sedikit
-                    floral).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Rose (Rosa
-                    Damascena atau Turkish Rose) dan Jasmine (dominasi mawar
-                    yang segar dan lembut, bukan tipe mawar yang tua dan berat).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Sandalwood,
-                    dan Amber (memberikan kehangatan dan ketahanan tanpa
-                    mengalahkan karakter mawarnya).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Cedarwood, Ambergris, Fir Balsam                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline sweet lavender edp floral aromatic lavender vanilla bergamot lemon musk sandalwood"
-              >
-                <img
-                  src="img/sweet laven.jpg"
-                  alt="Evangeline Sweet Lavender EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Sweet Lavender EDP 100ml</h3>
-                  <p>
-                    Sweet Lavender adalah varian yang memiliki aroma lavender
-                    yang segar, menenangkan, namun tetap manis dan feminin.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Lavender, Bergamot,
-                    dan Lemon (aroma lavender yang segar dengan sentuhan
-                    citrus).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Lavender (terus
-                    dominan di inti aroma), sedikit sentuhan White Floral
-                    (memberikan kelembutan).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Musk,
-                    dan Sandalwood (base yang manis dan creamy menyeimbangkan
-                    kesegaran lavender sehingga tidak terlalu "herbal").
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <hr />
+                                <p class="price"><strong>Harga:</strong> Rp 93.000</p>
+                            </div>
+                        </div>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline white magnolia edp floral fresh magnolia jasmine lily valley orange blossom musk vanilla"
-              >
-                <img
-                  src="img/white mag.webp"
-                  alt="Evangeline White Magnolia EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline White Magnolia EDP 100ml</h3>
-                  <p>
-                    White Magnolia adalah varian yang memiliki aroma floral
-                    putih yang bersih, lembut, dan sangat feminin.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Bergamot dan Orange
-                    Blossom (kesegaran citrus yang ringan).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Magnolia,
-                    Jasmine, dan Lily of the Valley (dominasi bunga magnolia
-                    yang lembut dan bersih).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Vanilla,
-                    dan Cedarwood (memberikan ketahanan dan sentuhan powdery
-                    yang halus).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline sunny bloom edp floral fruity orange peach jasmine rose freesia musk vanilla amber"
-              >
-                <img
-                  src="img/sunny bloom.jpg"
-                  alt="Evangeline Sunny Bloom EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Sunny Bloom EDP 100ml</h3>
-                  <p>
-                    Sunny Bloom adalah varian yang sangat cheerful, bright, dan
-                    optimis.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Orange, Peach, dan
-                    Bergamot (fruity-citrus yang manis dan menyegarkan).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Jasmine, Rose,
-                    dan Freesia (sentuhan floral yang lembut dan ceria).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Vanilla,
-                    dan Amber (memberikan kehangatan dan ketahanan yang manis).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                        <div class="hospital-item" data-keywords="lilith eve garden eden edp fresh clean floral bergamot lemon lily valley jasmine rose musk sandalwood vanilla">
+                            <img src="assets/img/garden eden.jpg" alt="LILITH & EVE GARDEN OF EDEN EDP 30ML" />
+                            <div>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline cherry blossom edp floral fresh cherry sakura bergamot cherry blossom jasmine rose musk sandalwood vanilla"
-              >
-                <img
-                  src="img/cherry blossum.jpg"
-                  alt="Evangeline Cherry Blossom EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Cherry Blossom EDP 100ml</h3>
-                  <p>
-                    Cherry Blossom adalah varian yang terinspirasi dari bunga
-                    sakura Jepang.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Bergamot dan Cherry
-                    (kesegaran citrus dengan sentuhan fruity dari cherry).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Cherry Blossom
-                    (Sakura), Jasmine, dan Rose (aroma bunga sakura yang lembut,
-                    manis, dan sedikit pudding-like).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Sandalwood,
-                    dan Vanilla (base yang creamy dan hangat).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <h3>LILITH & EVE GARDEN OF EDEN EDP 30ML</h3>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline peachy rose edp floral fruity peach raspberry rose jasmine lily valley musk vanilla amber"
-              >
-                <img
-                  src="img/peachy rose.jpg"
-                  alt="Evangeline Peachy Rose EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Peachy Rose EDP 100ml</h3>
-                  <p>
-                    Peachy Rose adalah varian yang memadukan aroma buah persik
-                    yang manis dan juicy dengan wangi mawar yang lembut.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Peach, Raspberry,
-                    dan Bergamot (awal yang sangat fruity dan manis).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Rose, Jasmine,
-                    dan Lily of the Valley (perpaduan antara fruity dan floral).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Vanilla,
-                    dan Amber (base yang manis dan tahan lama).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <p>
+                                    Lilith & Eve Garden of Eden adalah varian yang sangat populer bagi pecinta aroma segar dan bersih.                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline jolly berries edp fruity sweet strawberry raspberry blackberry rose jasmine vanilla musk"
-              >
-                <img
-                  src="img/jolly berries.webp"
-                  alt="Evangeline Jolly Berries EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Jolly Berries EDP 100ml</h3>
-                  <p>
-                    Jolly Berries adalah varian yang sangat fruity, manis, dan
-                    fun.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Strawberry,
-                    Raspberry, dan Blackberry (ledakan aroma buah beri yang
-                    manis dan segar).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Rose, Jasmine,
-                    dan White Floral (sentuhan floral untuk menyeimbangkan
-                    fruity yang dominan).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Musk,
-                    dan Amber (base yang manis dan hangat).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <p>
+                                    Jika Forbidden Fruit adalah sisi "gelap" dan misterius, Garden of Eden adalah sisi "terang" yang murni, polos, dan feminin.                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline icy vanilla edp gourmand vanilla mint bergamot ambroxan ambergris fir resin cedar"
-              >
-                <img
-                  src="img/icy vanila.jpg"
-                  alt="Evangeline Icy Vanilla EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Icy Vanilla EDP 100ml</h3>
-                  <p>
-                    Icy Vanilla adalah varian yang unik karena menggabungkan
-                    aroma vanilla yang manis dengan sentuhan "dingin" atau
-                    "cool".
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Mint (peppermint
-                    atau spearmint) dan Bergamot (memberikan kesegaran yang
-                    "dingin" dan sedikit herbal).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Vanilla dan
-                    Ambroxan (vanilla yang dominan namun dipadukan dengan
-                    ambroxan yang memberikan kesan clean dan modern). Ambergris
-                    (memberikan kesan hangat dan "mahal").
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Fir Resin dan
-                    Cedar (memberikan sentuhan aroma kayu yang menenangkan dan
-                    tahan lama).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Bergamot dan Lemon (memberikan kesegaran citrus yang ringan dan menyegarkan).                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline black opi edp amber vanilla gourmand pear pink pepper orange blossom coffee jasmine patchouli cedarwood"
-              >
-                <img
-                  src="img/black opi.jpg"
-                  alt="Evangeline Black Opi EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Black Opi EDP 100ml</h3>
-                  <p>
-                    Parfum ini masuk dalam kategori Amber Vanilla atau Oriental
-                    Gourmand. Wanginya dominan manis, hangat, dan "berani".
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Pear, Pink Pepper,
-                    dan Orange Blossom (Awal yang segar namun sedikit spicy).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Coffee dan
-                    Jasmine (Aroma kopi di sini memberikan kesan unik dan
-                    maskulin-feminin yang seimbang).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla,
-                    Patchouli, dan Cedarwood (Memberikan kesan akhir yang manis,
-                    creamy, dan menempel lama di kulit).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <p>
+                                    <strong>Heart Notes (Aroma Inti):</strong> Lily of the Valley, Jasmine, dan Rose (dominasi bunga-bunga putih dan lembut memberikan kesan sangat feminin dan murni).                               </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline raw almond edp nutty gourmand orange peach almond rose lily valley vanilla musk sandalwood"
-              >
-                <img
-                  src="assets/img/raw.webp"
-                  alt="Evangeline Raw Almond EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Raw Almond EDP 100ml</h3>
-                  <p>
-                    Sesuai namanya, parfum ini menonjolkan aroma kacang almond
-                    yang dipadukan dengan unsur creamy.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Orange, Peach
-                    (Memberikan kesegaran buah yang tipis di awal agar tidak
-                    terlalu berat).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Almond, Rose,
-                    Lily of the Valley (Inti wanginya adalah kacang almond yang
-                    memberikan kesan gurih/nutty dan bunga yang lembut).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Musk,
-                    Sandalwood (Memberikan ketahanan dan sentuhan manis yang
-                    hangat di akhir).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
-                </div>
-              </div>
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Sandalwood, dan sedikit Vanilla (memberikan ketahanan dan sentuhan creamy tanpa terlalu manis).                                 </p>
 
-              <div
-                class="hospital-item"
-                data-keywords="morris travel paris edp floral musky bergamot green apple ozone jasmine rose white floral musk amber vanilla"
-              >
-                <img
-                  src="assets/img/paris.jpg"
-                  alt="Morris Travel Paris 100ml"
-                />
-                <div>
-                  <h3>Morris Travel Paris 100ml</h3>
-                  <p>
-                    Morris Tropical Edition - Paris (sering disebut juga sebagai
-                    Morris Travel Paris) adalah varian dari lini Tropical
-                    Edition yang dirancang untuk memberikan nuansa liburan di
-                    Eropa melalui aromanya yang romantis dan berkelas.
-                  </p>
-                  <p>
-                    Varian Paris memiliki profil aroma Floral-Musky yang
-                    cenderung "dingin" dan elegan, tidak terlalu manis
-                    dibandingkan varian Tropical lainnya.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Bergamot, Green
-                    Apple, dan Ozone. (Memberikan sensasi segar dan airy saat
-                    pertama kali disemprotkan).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Jasmine, Rose,
-                    dan White Floral. (Aroma bunga yang lembut memberikan kesan
-                    feminin dan romantis).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Amber, dan
-                    Vanilla. (Memberikan sentuhan akhir yang bersih, hangat, dan
-                    membuat wangi menempel lebih lama di kulit).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 50.500</span>
-                    <span class="new-price">Rp 32.500</span>
-                  </p>
-                </div>
-              </div>
+                                <hr />
+                                <p class="price"><strong>Harga:</strong> Rp.93.000</p>
+                            </div>
+                        </div>
 
-              <div
-                class="hospital-item"
-                data-keywords="morris travel venice edp floral fruity orange bergamot rose jasmine musk amber vanilla"
-              >
-                <img
-                  src="assets/img/venice.webp"
-                  alt="Morris Travel Venice 100ml"
-                  class="image-content"
-                />
-                <div>
-                  <h3>Morris Travel Venice 100ml</h3>
-                  <p>
-                    Venice memiliki profil aroma yang lebih "berwarna" dan manis
-                    dibandingkan varian Paris.
-                  </p>
-                  <p>
-                    <strong>Top Notes (Aroma Awal):</strong> Fruity, Orange, dan
-                    Bergamot. (Memberikan ledakan kesegaran buah yang manis dan
-                    sitrus di awal).
-                  </p>
-                  <p>
-                    <strong>Heart Notes (Aroma Inti):</strong> Floral, Rose, dan
-                    Jasmine. (Sentuhan bunga yang memberikan kesan feminin).
-                  </p>
-                  <p>
-                    <strong>Base Notes (Aroma Dasar):</strong> Musk, Amber, dan
-                    Vanilla. (Base yang serupa dengan varian Paris, namun di
-                    sini vanilanya terasa lebih menonjol sehingga memberikan
-                    kesan lebih manis).
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 50.500</span>
-                    <span class="new-price">Rp 32.500</span>
-                  </p>
-                </div>
-              </div>
 
-              <div
-                class="hospital-item"
-                data-keywords="evangeline black vanilla edp gourmand vanilla coconut woody creamy powdery"
-              >
-                <img
-                  src="img/blck vanula.jpg"
-                  alt="Evangeline Black Vanilla EDP 100ml"
-                />
-                <div>
-                  <h3>Evangeline Black Vanilla EDP 100ml</h3>
-                  <p>
-                    Berbeda dengan wangi vanilla yang murni seperti kue, Black
-                    Vanilla memiliki sisi yang lebih "gelap" dan dewasa.
-                  </p>
-                  <p>
-                    <strong>Aroma Utama:</strong> Perpaduan Vanilla yang manis
-                    dengan sentuhan Coconut (kelapa) dan sedikit aroma Woody
-                    (kayu).
-                  </p>
-                  <p>
-                    <strong>Vibe:</strong> Wanginya sangat creamy, hangat, dan
-                    cozy. Bukan tipe vanilla yang membuat mual (enek), karena
-                    ada penyeimbang dari sisi powdery dan kayunya.
-                  </p>
-                  <hr />
-                  <p class="price">
-                    <strong>Harga:</strong>
-                    <span class="old-price">Rp 52.000</span>
-                    <span class="new-price">Rp 36.000</span>
-                  </p>
+                        <div class="hospital-item" data-keywords="alt edp reverie tuberose white floral black currant davana vanilla mur">
+                            <img src="assets/img/alt.jpg" alt="ALT EDP REVERIE 50ML" />
+                            <div>
+
+                                <h3>ALT EDP REVERIE 50ML</h3>
+
+                                <p>
+                                    Sebuah momen refleksi penuh kebahagiaan di mana seseorang dapat hanyut dari dunia dan masuk ke dalam pikirannya sendiri. Dengan perpaduan aroma yang memikat, REVERIE menangkap esensi perasaan ini, mengajak Anda untuk memulai perjalanan indrawi tersendiri.
+                                    Rasakan suasana REVERIE, dan biarkan diri Anda hanyut ke dalam pikiran yang tenang dan rileks, di mana pelarian yang penuh kebahagiaan menanti.</P>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Tuberose, Bunga Putih.                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Black Currant, Davana.                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Vanili, Mur.                                 </p>
+
+                                <hr />
+                                <p class="price"><strong>Harga:</strong> Rp.199.000</p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="metaverse edp hint futuristic aquatic lavender pear musk amberwood">
+                            <img src="assets/img/metaverse.jpg" alt="HINT METAVERSE EDP 50ML" />
+                            <div>
+
+                                <h3>HINT METAVERSE EDP 50ML</h3>
+
+                                <p>
+                                    Hint Metaverse memiliki karakter Fruity-Floral dengan sentuhan Aldehydic yang sangat kuat, memberikan kesan "Soapy" atau wangi bersih seperti sabun/laundry mewah.                                 </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Ginger (Jahe), Aldehydes, dan Red Fruits. (Memberikan sensasi segar, sedikit spicy, dan sangat bersih di awal).                               </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Orange Blossom, dan Tuberose. (Nuansa bunga putih yang elegan namun tidak terlalu berat).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Patchouli, Incense, Vanilla, Honey, dan Vetiver. (Memberikan kedalaman aroma yang sedikit manis, hangat, dan bersahaja).                               </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp.277.000</span>
+                                    <span class="discount-price">Rp.193.500</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="bodibreze mabel edp fresh feminine floral fruity jasmine peony musk cedarwood amber">
+                            <img src="assets/img/mabel.png" alt="BODIBREZE MABEL EDP 30ML" />
+                            <div>
+
+                                <h3> BODIBREZE MABEL EDP 30ML</h3>
+
+                                <p>
+                                    BODIBREZE Mabel adalah salah satu varian Eau de Parfum (EDP) 30 ml dari seri parfum Bodibreze yang dirancang untuk wanita dengan karakter aroma yang bersifat fresh, feminin, dan menyenangkan. Parfum ini cocok dipakai sehari-hari atau berbagai kesempatan
+                                    santai karena wanginya tidak terlalu berat namun tetap elegan                             </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>biasanya aroma buah segar seperti peach & aprikot yang memberi kesan kilau manis menyenangkan.                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong>terdiri dari osmanthus dan lily of the valley, yang menciptakan nuansa bunga yang elegan dan halus                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong>biasanya memberikan kesan hangat dan tahan lama, mencampurkan unsur kayu lembut atau musk ringan (detail spesifik base notes tidak selalu dicantumkan di semua listing).
+                                </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong> Rp.129.000                                     <span class="old-price"></span>                                     <span class="discount-price"></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" summerscent ja quilinee edp floral fruity pear cardamom bergamot rose geranium freesia patchouli woody ambery musky">
+                            <img src="assets/img/summerscant ja quilinee.jpg" alt="SUMMERSCEN JA QUILINE EDP 50ML" />
+                            <div>
+
+                                <h3>SUMMERSCENT JA QUILINE EDP 50ML</h3>
+
+                                <p>
+                                    Ja Quiline memiliki profil aroma Floral Fruity yang segar dan elegan. Wanginya sering digambarkan seperti suasana taman di pagi hari yang sejuk.                                 </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Pear (Pir), Cardamom (Kapulaga), dan Bergamot.                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Rose (Mawar), Geranium, dan Freesia.                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Patchouli (Nilam), Woody, Ambery, dan Musky                                 </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>Rp.146.500
+                                    <span class="old-price"></span>
+                                    <span class="discount-price"></span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" scarlett euphoria edp neroli pear mandarin jasmine orange blossom solar amber woody musk">
+                            <img src="assets/img/scarlet euphoria.png" alt="SCARLETT EUPHORIA EDP 30ML" />
+                            <div>
+
+                                <h3>SCARLETT EUPHORIA EDP 30ML</h3>
+
+                                <p>
+                                    Varian ini cocok untuk Anda yang menyukai wangi yang memberikan kesan mewah, dewasa, dan berkelas.Inspirasi: Sering disebut sebagai dupe dari Maison Francis Kurkdjian (MFK) Baccarat Rouge 540.                               </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Neroli, Pear, Mandarin.                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Orange Blossom, Solar.                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Amber, Woody, Musk.                                 </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>Rp. 75.000 <span class="old-price"></span>                                     <span class="discount-price"></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" scarlett sweet memories edp floral gourmand musky amber cedarwood vanilla jasmine peach honeysuckle">
+                            <img src="assets/img/scarlet sweet dream.png" alt="SCARLETT SWEET MEMORIES EDP 30ML" />
+                            <div>
+
+                                <h3>SCARLETT SWEET MEMORIES EDP 30ML</h3>
+
+                                <p>
+                                    Varian ini lebih ke arah manis, feminin, dan menggugah selera (gourmand). Inspirasi: Terinspirasi dari aroma YSL Libre. Karakter Aroma: Floral Gourmand.                                 </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Egyptian Balsam, Grapefruit, Damask Rose.                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Vanilla, Honeysuckle, Jasmine, Peach.                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Musky, Amber, Cedarwood.                                 </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp 75.000</span>
+                                    <span class="discount-price">Rp.60.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords="  mykonos utopia edp floral white flowers calabrian bergamot ylang-ylang jasmine sambac iris cedarwood white musk">
+                            <img src="assets/img/utopia.jpeg" alt="MYKONOS UTHOPIA EDP 15ML" />
+                            <div>
+
+                                <h3>MYKONOS UTHOPIA EDP 15ml</h3>
+
+                                <p>
+                                    Utopia, terinspirasi dari konsep dunia yang sempurna, adalah wewangian yang diracik dengan cermat untuk mewujudkan esensi taman bunga putih yang ideal. Aromanya dibuka dengan pelukan bercahaya dari Calabrian bergamot dan semburan kesegaran citrus, lalu
+                                    berpindah dengan lembut ke perpaduan ylang-ylang dan jasmine sambac, diperkaya sentuhan elegan iris serta nuansa akuatik yang menyegarkan. Wewangian ini kemudian menetap dengan dasar bernuansa kayu dan white musk yang
+                                    manis, menciptakan aura yang sofisticat sekaligus menenangkan. Utopia menghadirkan pelarian dari rutinitas sehari-hari, mengajak Anda memasuki dunia bunga putih yang dreamy dan penuh ketenangan.
+                                </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Calabrian Bergamot, White Tea, Buah-buahan, Citrus                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Iris, Jasmine Sambac, Ylang-ylang                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Cedarwood, White Musk                                 </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp 100.000</span>
+                                    <span class="discount-price">Rp 92.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" mykonos paradise edp tropical floral coconut frangipani jasmine pineapple vanilla amber woody">
+                            <img src="assets/img/paradise.jpg" alt="MYKONOS PARADISE EDP 50ML" />
+                            <div>
+
+                                <h3>MYKONOS PARADISE EDP 50ML</h3>
+
+                                <p>
+                                    Bayangkan sore hari yang cerah, Anda menyeruput segelas piña colada dingin di tepi laut Karibia berwarna turquoise yang jernih, dikelilingi oleh harum pepohonan frangipani Bali. Top notes membuka suasana liburan tropis dengan ragam buah-buahan segar yang
+                                    asam-manis. Tropis, cerah, menyegarkan, dan juicy, dengan sentuhan creamy yang sensual dari kelapa. Wewangian ini kemudian bertransisi dengan indah menjadi sensasi floral yang creamy, menonjolkan nuansa bunga putih.
+                                    Kelembutan kelapa tetap bertahan, memperkaya manisnya bunga frangipani dan kesegaran jasmine. Dry down-nya terasa menenangkan, terapeutik, dan sensual, sementara aroma buah meninggalkan jejak cerah yang lembut.   
+                                              </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Kelapa, Jeruk Mandarin, Pir, Nanas                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Frangipani, Jasmine, Lily                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Amber, Vanila, Nuansa Kayu                                 </p>
+
+                                <hr />
+                                <p class="price">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price">Rp.171.000</span>
+                                    <span class="discount-price">Rp.157.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item" data-keywords=" mykonos enchanted edp floral fruity peony rose violet peach iris musk">
+                            <img src=" assets/img/enc.webp " alt="MYKONOS ENCHANTED EDP 50ML " />
+                            <div>
+
+                                <h3>MYKONOS ENCHANTED EDP 50ML</h3>
+
+                                <p>
+                                    Mykonos Enchanted adalah parfum Extrait de Parfum / Eau de Parfum beraroma floral-fruity yang dirancang untuk memberi kesan feminin, segar, dan elegan. Wanginya hangat tetapi tetap ringan, cocok dipakai sehari-hari atau momen spesial karena kombinasi
+                                    aroma yang harmonis dan mudah diterima berbagai selera.                                 </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Mandarin orange — memberikan kesan segar, cerah, dan energik saat pertama disemprot.                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong>Peony, Rose, Violet, Peach — lapisan utama wangi yang memunculkan aroma bunga lembut dengan sentuhan buah manis juicy, terasa feminin dan romantis.
+                                </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong>Iris, Musk — jejak akhir yang lembut, powdery, dan hangat, memberi nuansa elegan yang tahan lebih lama.                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 120.000</span>
+                                    <span class="discount-price ">Rp 93.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" onix fwb edp fresh warm bold unisex bergamot lemon orange apple green tea freesia white floral amber peach coconut vetiver musk vanilla cedarwood caramel">
+                            <img src="assets/img/fwb.png " alt="ONIX FWB EDP 30ML " />
+                            <div>
+
+                                <h3>ONIX FWB EDP 30ML</h3>
+
+                                <p>
+                                    Onix FWB adalah parfum Eau de Parfum (EDP) dengan aroma segar, manis, dan hangat, cocok untuk kamu yang ingin tampil fresh namun tetap berkarakter sepanjang hari. Parfum ini hadir sebagai pilihan unisex, artinya bisa dipakai oleh pria maupun wanita. FWB
+                                    merupakan singkatan yang sering diinterpretasikan sebagai wangi yang Fresh, Warm, dan Bold (percaya diri) — karena aroma yang menyenangkan dan mudah diterima banyak orang.
+                                </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Bergamot, Lemon, Orange, Apple, Green Tea Memberi kesan segara dan ceria di awal semprotan, seperti aroma citrus dan buah yang ringan.                               </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong>Freesia, White Floral, Amber, Peach, Coconut Lapisan tengah yang menghadirkan keseimbangan floral lembut dan buah yang juicy, menciptakan wangi yang feminin namun hangat.
+                                </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong>Amber, Vetiver, Musk, Vanilla, Cedarwood, Caramel Jejak akhir yang hangat, manis, dan sedikit woody, memberikan aroma yang tahan lama dan memikat.
+                                </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.129.000                                     <span class="old-price "></span>                                     <span class="discount-price "></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" earth love life heaven retreat edp unisex warm soft calming mimosa rice accord lily of the valley cedarwood amber musk patchouli">
+                            <img src="assets/img/heaven.jpg " alt="EARTH LOVE LIFE HEAVEN RETREAT EDP 50ML " />
+                            <div>
+
+                                <h3>judul</h3>
+
+                                <p>Earth Love Life Haven Retreat adalah parfum Eau de Parfum (EDP) unisex dengan karakter wangi yang hangat, lembut, dan menenangkan. Parfum ini dirancang bukan hanya sebagai wewangian biasa, tetapi sebagai functional fragrance
+                                    yang membantu menciptakan suasana hati tertentu — khususnya rasa tenang, nyaman, dan seolah kembali ke tempat paling aman dalam hatimu.                                 </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Pepper (lada), Bergamot, Clary Sage Oil                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong>Mimosa Absolute, Rice Accord, Lily of the Valley                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong>Cedarwood, Amber, Musk, Sulawesi Patchouli                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp.295.000</span>
+                                    <span class="discount-price ">Rp.236.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" earth love life forest therapy edp unisex calming grounding bergamot pink pepper egyptian jasmine rose ultimate patchouli amber musk ">
+                            <img src="assets/img/forest.jpg " alt="EARTH LOVE LIFE FOREST THERAPY EDP 50ML " />
+                            <div>
+
+                                <h3>EARTH LOVE LIFE FOREST THERAPY EDP 50ML</h3>
+
+                                <p>
+                                    Earth Love Life Forest Therapy adalah parfum Eau de Parfum (EDP) 50 ml yang dirancang sebagai functional fragrance — bukan hanya sekadar wewangian, tetapi juga mengedepankan sensasi menenangkan, grounding, dan “melepaskan energi negatif” seraya membangkitkan
+                                    perasaan tenang seperti berada di tengah hutan. Konsep ini terinspirasi dari praktik forest bathing, yaitu terapi alami yang membantu relaksasi melalui suasana hutan.
+                                </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Bergamot – aroma citrus segar dan cerah, Pink Pepper – sentuhan rempah hangat yang ringan                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong>Egyptian Jasmine – bunga melati yang halus dan feminin, Rose Ultimate – nuansa mawar lembut dan elegan                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong>Fresh & citrusy di awal (bergamot + pink pepper), Floral lembut di tengah (jasmine + rose), Woody & warm di akhir (patchouli, amber, musk)                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp.295.000</span>
+                                    <span class="discount-price ">Rp.236.000</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" rahasia ceremony edp ml incense lemon turmeric leaf rose vetiver living hinoki olibanum frankincense patchouli ambery musk ">
+                            <img src="assets/img/cer.jpg " alt="RAHASIA CEREMONY EDP ML" />
+                            <div>
+
+                                <h3>RAHASIA CEREMONY EDP 50ML</h3>
+
+                                <p>
+                                    Rahasia Ceremony 29 adalah parfum Eau de Parfum (EDP) 50 ml hasil kolaborasi Rahasia Beauty × Brandon Salim yang dirancang untuk menjadi wewangian dengan cerita emosional tentang perjalanan cinta, konsistensi, dan rasa tenang. ⁠Ceremony 29 terinspirasi
+                                    dari nuansa rumah kayu tradisional Jepang Machiya — yang hangat, natural, dan penuh kenangan. Parfum ini cocok untuk kamu yang ingin tampil elegan, bersih, dan punya aura calm namun sophisticated, cocok dipakai sehari-harimaupun
+                                    untuk momen istimewa.
+                                </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Incense – aroma smoky lembut yang hangat, Lemon – segar dan cerah, Turmeric Leaf – sentuhan rempah ringan yang unik                               </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong>Rose – memberi sentuhan floral yang romantis dan elegan                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong>Vetiver – woodsy yang stabil, Living Hinoki – aroma kayu Jepang alami yang calming, Olibanum (Frankincense) – hangat, resinous, Patchouli – earthy, Ambery Musk – sensual dan
+                                    tahan lama                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.205.500                                     <span class="old-price "></span>                                     <span class="discount-price "></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" rahasia chateau de lune edp 50ml bergamot apple lemon rose muguet cedarwood patchouli amber musk ">
+                            <img src="assets/img/chat.png " alt="RAHASIA CHATEAU DE LUNE EDP 50ML" />
+                            <div>
+
+                                <h3>RAHASIA CHATEAU DE LUNE EDP 50ML</h3>
+
+                                <p>
+                                    Rahasia Chateau de Lune adalah parfum Eau de Parfum (EDP) 50 ml dari Rahasia Beauty yang hadir dengan karakter aroma yang elegan, romantis, dan sedikit dreamy — cocok untuk kamu yang ingin tampil dengan kesan sofistikasi yang lembut namun memikat. Parfum
+                                    ini terinspirasi dari pengalaman berjalan di sekitar chateau Perancis di bawah cahaya bulan, di mana udara dipenuhi aroma bunga, kayu, dan kehangatan alami
+                                </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Bergamot – citrus segar yang cerah, Apple – buah manis yang juicy, Lemon – kesan fresh yang uplifting                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong>Rose – bunga mawar yang elegan dan romantis, Muguet (Lily of the Valley) – floral lembut yang menenangkan, Cedarwood – nuansa kayu yang menambah kedalaman
+                                </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong>Patchouli – kayu earthy yang hangat, Amber – kehangatan manis dan sensual, Musk – lembut dan tahan lama                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.205.500                                     <span class="old-price "></span>                                     <span class="discount-price "></span>                               </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" mykonos body mist lychee breeze 115ml fruity fresh lychee mint aquatic musk ">
+                            <img src="assets/img/leci.webp " alt="MYKONOS BODY MIST LYCHEE BREEZE 115ML" />
+                            <div>
+
+                                <h3>MYKONOS BODY MIST LYCHEE BREEZE 115ML</h3>
+
+                                <p>
+                                    Sesuai namanya, parfum ini didominasi oleh wangi buah leci yang sangat autentik dan segar.
+                                </p>
+
+                                <p>
+                                    <strong>Aroma Utama:</strong> Lychee (Leci) dan Mint.                                 </p>
+
+                                <p>
+                                    <strong>Vibe:</strong>Bayangkan aroma segelas es teh leci (lychee iced tea) yang diminum di siang hari yang terik. Ada perpaduan antara manis buah yang juicy dengan sensasi dingin dari mint yang membuat hidung terasa
+                                    segar seketika.                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp76.000</span>
+                                    <span class="discount-price ">Rp.69.500</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords="evangeline black opi edp amber vanilla gourmand pear pink pepper orange blossom coffee jasmine patchouli cedarwood ">
+                            <img src="assets/img/black opi.jpg" alt="Evangeline Black Opi EDP 100ml " />
+                            <div>
+
+                                <h3>Evangeline Black Opi EDP 100ml</h3>
+
+                                <p>
+                                    Parfum ini masuk dalam kategori Amber Vanilla atau Oriental Gourmand. Wanginya dominan manis, hangat, dan "berani ".
+                                </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Pear, Pink Pepper, dan Orange Blossom (Awal yang segar namun sedikit spicy).                                 </p>
+
+                                <p>
+                                    <strong>Heart Notes (Aroma Inti):</strong> Coffee dan Jasmine (Aroma kopi di sini memberikan kesan unik dan maskulin-feminin yang seimbang).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Patchouli, dan Cedarwood (Memberikan kesan akhir yang manis, creamy, dan menempel lama di kulit).                               </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 52.000</span>
+                                    <span class="new-price ">Rp 36.000</span>                                 </p>
+                            </div>
+                        </div>
+
+
+                        <div class="hospital-item " data-keywords=" evangeline bakkarat edp saffron jasmine amberwood ambergris fir resin cedar woody ">
+                            <img src="assets/img/bacar.jpg " alt="EVANGELINE BAKKARAT EDP 100ML" />
+                            <div>
+
+                                <h3>EVANGELINE BAKKARAT EDP 100ML</h3>
+
+                                <p>
+                                    Tetap setia pada jalur dupe MFK Baccarat Rouge 540, aromanya didominasi oleh perpaduan manis dan kayu.
+                                </p>
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong>Saffron dan Jasmine (memberikan kesan mewah yang unik).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Amberwood dan Ambergris (memberikan kesan hangat dan "mahal").                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Fir Resin dan Cedar (memberikan sentuhan aroma kayu yang menenangkan dan tahan lama).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp.52.000</span>
+                                    <span class="discount-price ">Rp.36.000</span>
+                                </p>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="evangeline raw almond edp nutty gourmand orange peach almond rose lily valley vanilla musk sandalwood ">
+                                <img src="assets/img/raw.webp " alt="Evangeline Raw Almond EDP 100ml " />
+                                <div>
+
+                                    <h3>Evangeline Raw Almond EDP 100ml</h3>
+
+                                    <p>
+                                        Sesuai namanya, parfum ini menonjolkan aroma kacang almond yang dipadukan dengan unsur creamy.
+                                    </p>
+
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Orange, Peach (Memberikan kesegaran buah yang tipis di awal agar tidak terlalu berat).                                     </p>
+
+                                    <p>
+                                        <strong>Heart Notes (Aroma Inti):</strong> Almond, Rose, Lily of the Valley (Inti wanginya adalah kacang almond yang memberikan kesan gurih/nutty dan bunga yang lembut).                                   </p>
+
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Musk, Sandalwood (Memberikan ketahanan dan sentuhan manis yang hangat di akhir).                                     </p>
+
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>                                         <span class="old-price ">Rp 52.000</span>                                         <span class="new-price ">Rp 36.000</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="morris travel paris edp floral musky bergamot green apple ozone jasmine rose white floral musk amber vanilla ">
+                                <img src="assets/img/paris.jpg " alt="Morris Travel Paris 100ml " />
+                                <div>
+
+                                    <h3>Morris Travel Paris 100ml</h3>
+
+                                    <p>
+                                        Morris Tropical Edition - Paris (sering disebut juga sebagai Morris Travel Paris) adalah varian dari lini Tropical Edition yang dirancang untuk memberikan nuansa liburan di Eropa melalui aromanya yang romantis dan berkelas.
+                                    </p>
+
+                                    <p>
+                                        Varian Paris memiliki profil aroma Floral-Musky yang cenderung "dingin " dan elegan, tidak terlalu manis dibandingkan varian Tropical lainnya.                                     </p>
+
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Bergamot, Green Apple, dan Ozone. (Memberikan sensasi segar dan airy saat pertama kali disemprotkan).                                   </p>
+
+                                    <p>
+                                        <strong>Heart Notes (Aroma Inti):</strong> Jasmine, Rose, dan White Floral. (Aroma bunga yang lembut memberikan kesan feminin dan romantis).                                   </p>
+
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Musk, Amber, dan Vanilla. (Memberikan sentuhan akhir yang bersih, hangat, dan membuat wangi menempel lebih lama di kulit).                                   </p>
+
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp 50.500</span>
+                                        <span class="new-price ">Rp 32.500</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="morris travel venice edp floral fruity orange bergamot rose jasmine musk amber vanilla ">
+                                <img src="assets/img/venice.webp " alt="Morris Travel Venice 100ml " class="image-content " />
+                                <div>
+
+                                    <h3>Morris Travel Venice 100ml</h3>
+
+                                    <p>
+                                        Venice memiliki profil aroma yang lebih "berwarna " dan manis dibandingkan varian Paris.                                     </p>
+
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Fruity, Orange, dan Bergamot. (Memberikan ledakan kesegaran buah yang manis dan sitrus di awal).                                   </p>
+
+                                    <p>
+                                        <strong>Heart Notes (Aroma Inti):</strong> Floral, Rose, dan Jasmine. (Sentuhan bunga yang memberikan kesan feminin).                                     </p>
+
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Musk, Amber, dan Vanilla. (Base yang serupa dengan varian Paris, namun di sini vanilanya terasa lebih menonjol sehingga memberikan kesan lebih manis).
+                                    </p>
+
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp 50.500</span>
+                                        <span class="new-price ">Rp 32.500</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="hospital-item " data-keywords="evangeline black vanilla edp gourmand vanilla coconut woody creamy powdery ">
+                                <img src="assets/img/blck vanula.jpg" alt="Evangeline Black Vanilla EDP 100ml " />
+                                <div>
+
+                                    <h3>Evangeline Black Vanilla EDP 100ml</h3>
+
+                                    <p>
+                                        Berbeda dengan wangi vanilla yang murni seperti kue, Black Vanilla memiliki sisi yang lebih "gelap " dan dewasa.                                     </p>
+
+                                    <p>
+                                        <strong>Aroma Utama:</strong> Perpaduan Vanilla yang manis dengan sentuhan Coconut (kelapa) dan sedikit aroma Woody (kayu).                                     </p>
+
+                                    <p>
+                                        <strong>Vibe:</strong> Wanginya sangat creamy, hangat, dan cozy. Bukan tipe vanilla yang membuat mual (enek), karena ada penyeimbang dari sisi powdery dan kayunya.                                   </p>
+
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp 52.000</span>
+                                        <span class="new-price ">Rp 36.000</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- No Results Message (hidden by default) -->
+
+                        <div id="noResults " class="no-results " style="display: none ">
+
+                            <ion-icon name="search-outline "></ion-icon>
+
+                            <h3>No products found</h3>
+
+                            <p>Try searching with different keywords</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
 
-            <!-- No Results Message (hidden by default) -->
-            <div id="noResults" class="no-results" style="display: none">
-              <ion-icon name="search-outline"></ion-icon>
-              <h3>No products found</h3>
-              <p>Try searching with different keywords</p>
-            </div>
-          </div>
+
+
+            <!-- =========== Scripts =========  -->
+            <!-- <script src="assets/js/main.js"></script> -->
+            <!-- Scripts -->
+            <script>
+                // Toggle Navigation
+                let toggle = document.querySelector(".toggle");
+                let navigation = document.querySelector(".navigation");
+                let main = document.querySelector(".main");
+
+                toggle.onclick = function() {
+                    navigation.classList.toggle("active");
+                };
+
+                // Close navigation when clicking outside on mobile
+                document.addEventListener("click", function(event) {
+                    if (window.innerWidth <= 768) {
+                        if (!navigation.contains(event.target) &&
+                            !toggle.contains(event.target)
+                        ) {
+                            navigation.classList.remove("active");
+                        }
+                    }
+                });
+
+                // Search Functionality
+                function searchProducts() {
+                    const searchInput = document.getElementById("inputSearch");
+                    const searchTerm = searchInput.value.toLowerCase().trim();
+                    const productItems = document.querySelectorAll(".hospital-item");
+                    const noResults = document.getElementById("noResults");
+                    let foundCount = 0;
+
+                    if (searchTerm === "") {
+                        // Show all products if search is empty
+                        productItems.forEach((item) => {
+                            item.style.display = "flex";
+                        });
+                        noResults.style.display = "none";
+                        return;
+                    }
+
+                    productItems.forEach((item) => {
+                        const productName = item
+                            .querySelector("h3")
+                            .textContent.toLowerCase();
+                        const productDescription = item.textContent.toLowerCase();
+                        const keywords = item.getAttribute("data-keywords") || "";
+
+                        // Search in name, description, and keywords
+                        if (
+                            productName.includes(searchTerm) ||
+                            productDescription.includes(searchTerm) ||
+                            keywords.includes(searchTerm)
+                        ) {
+                            item.style.display = "flex";
+                            foundCount++;
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+
+                    // Show/hide no results message
+                    if (foundCount === 0) {
+                        noResults.style.display = "block";
+                    } else {
+                        noResults.style.display = "none";
+                    }
+                }
+
+                // Allow search on Enter key
+                document
+                    .getElementById("inputSearch")
+                    .addEventListener("keypress", function(event) {
+                        if (event.key === "Enter") {
+                            event.preventDefault();
+                            searchProducts();
+                        }
+                    });
+
+                // Real-time search (optional - searches as you type)
+                document
+                    .getElementById("inputSearch")
+                    .addEventListener("input", function() {
+                        searchProducts();
+                    });
+            </script>
+
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         </div>
-      </div>
+</body>
 
-      <!-- =========== Scripts =========  -->
-      <!-- <script src="assets/js/main.js"></script> -->
-      <!-- Scripts -->
-      <script>
-        // Toggle Navigation
-        let toggle = document.querySelector(".toggle");
-        let navigation = document.querySelector(".navigation");
-        let main = document.querySelector(".main");
-
-        toggle.onclick = function () {
-          navigation.classList.toggle("active");
-        };
-
-        // Close navigation when clicking outside on mobile
-        document.addEventListener("click", function (event) {
-          if (window.innerWidth <= 768) {
-            if (
-              !navigation.contains(event.target) &&
-              !toggle.contains(event.target)
-            ) {
-              navigation.classList.remove("active");
-            }
-          }
-        });
-
-        // Search Functionality
-        function searchProducts() {
-          const searchInput = document.getElementById("inputSearch");
-          const searchTerm = searchInput.value.toLowerCase().trim();
-          const productItems = document.querySelectorAll(".hospital-item");
-          const noResults = document.getElementById("noResults");
-          let foundCount = 0;
-
-          if (searchTerm === "") {
-            // Show all products if search is empty
-            productItems.forEach((item) => {
-              item.style.display = "flex";
-            });
-            noResults.style.display = "none";
-            return;
-          }
-
-          productItems.forEach((item) => {
-            const productName = item
-              .querySelector("h3")
-              .textContent.toLowerCase();
-            const productDescription = item.textContent.toLowerCase();
-            const keywords = item.getAttribute("data-keywords") || "";
-
-            // Search in name, description, and keywords
-            if (
-              productName.includes(searchTerm) ||
-              productDescription.includes(searchTerm) ||
-              keywords.includes(searchTerm)
-            ) {
-              item.style.display = "flex";
-              foundCount++;
-            } else {
-              item.style.display = "none";
-            }
-          });
-
-          // Show/hide no results message
-          if (foundCount === 0) {
-            noResults.style.display = "block";
-          } else {
-            noResults.style.display = "none";
-          }
-        }
-
-        // Allow search on Enter key
-        document
-          .getElementById("inputSearch")
-          .addEventListener("keypress", function (event) {
-            if (event.key === "Enter") {
-              event.preventDefault();
-              searchProducts();
-            }
-          });
-
-        // Real-time search (optional - searches as you type)
-        document
-          .getElementById("inputSearch")
-          .addEventListener("input", function () {
-            searchProducts();
-          });
-      </script>
-
-      <script
-        type="module"
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-      ></script>
-      <script
-        nomodule
-        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-      ></script>
-    </div>
-  </body>
 </html>

@@ -18,6 +18,27 @@
             color: #333;
         }
         
+        .info-section {
+            position: relative;
+            background-image: url("assets/img/mis.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            color: #fff;
+        }
+        
+        .info-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.705);
+            border-radius: 10px;
+        }
+        
+        .info-section * {
+            position: relative;
+        }
+        
         .container {
             margin-top: 50px;
         }
@@ -59,23 +80,23 @@
                 <li>
                     <a href="index.html">
                         <span class="icon">
-                            <ion-icon name="medkit-outline"></ion-icon>
+                            <ion-icon name="home-outline"></ion-icon>
                         </span>
-                        <span class="title">PENCARIAN RS</span>
+                        <span class="title">HOME</span>
                     </a>
                 </li>
                 <li>
                     <a href="Rute.html">
                         <span class="icon">
-                            <ion-icon name="location-outline"></ion-icon>
+                            <ion-icon name="trophy-outline"></ion-icon>
                         </span>
-                        <span class="title">MYSTERY SCENT</span>
+                        <span class="title">TOP BRANDS</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="map-outline"></ion-icon>
+                            <ion-icon name="bulb-outline"></ion-icon>
                         </span>
                         <span class="title">INFORMATION</span>
                     </a>
@@ -83,9 +104,9 @@
                 <li>
                     <a href="Daftarlist.html">
                         <span class="icon">
-                            <ion-icon name="list-outline"></ion-icon>
+                            <ion-icon name="trending-up-outline"></ion-icon>
                         </span>
-                        <span class="title">TOP BRANDS</span>
+                        <span class="title">TRENDING PRODUCTS</span>
                     </a>
                 </li>
             </ul>
@@ -108,36 +129,35 @@
                             <div class="col-lg-6"></div>
 
                             <div class="info-section">
-                                <h1>Tentang Sistem Pencarian Rumah Sakit</h1>
-                                <p>Sistem ini dirancang untuk membantu pengguna dalam menemukan rumah sakit terdekat di Jakarta Pusat dengan menggunakan algoritma Dijkstra dan formula Haversine. Dengan fitur-fitur yang tersedia, pengguna dapat:</p>
-                                <ul>
-                                    <li>Mengetahui lokasi rumah sakit terdekat berdasarkan jarak.</li>
-                                    <li>Menghitung rute terbaik menuju rumah sakit pilihan.</li>
-                                    <li>Mendapatkan informasi lengkap mengenai fasilitas rumah sakit yang tersedia.</li>
-                                </ul>
-                            </div>
-                            <div class="info-section mt-4">
-                                <h3>Cara Kerja Sistem</h3>
-                                <p>Sistem ini memanfaatkan data lokasi rumah sakit dan posisi pengguna untuk menghitung jarak menggunakan formula Haversine. Algoritma Dijkstra digunakan untuk menentukan rute terpendek menuju rumah sakit yang diinginkan.</p>
-                                <p>Semua perhitungan dilakukan secara otomatis, sehingga pengguna hanya perlu memasukkan jarak maksimum atau memilih rumah sakit tertentu untuk mendapatkan rute terbaik.</p>
-                            </div>
-                            <div class="info-section mt-4">
-                                <h3>Kontak</h3>
-                                <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi kami melalui:</p>
-                                <ul>
-                                    <li>Email: support@pencarianrs.com</li>
-                                    <li>Telepon: 021-12345678</li>
-                                    <li>Alamat: Jl. Sudirman No. 123, Jakarta Pusat</li>
-                                </ul>
+                                <h1>MYSTERY SCENT</h1>
+                                <h2>A Fragrance of Hidden Desire & Silent Power</h2>
+                                <p> Mystery Scent adalah parfum yang dirancang untuk menciptakan kesan mendalam, penuh rahasia, dan sulit ditebak. Aroma ini tidak hadir untuk sekadar harum, tetapi untuk membangun identitas—tentang seseorang yang tenang, percaya
+                                    diri, dan memiliki daya tarik alami yang muncul tanpa usaha berlebihan. Parfum ini cocok bagi pribadi yang menyukai keanggunan yang tidak mencolok, namun selalu meninggalkan kesan kuat dan berkelas. Mystery Scent bekerja
+                                    secara perlahan, berkembang di kulit, dan semakin indah seiring waktu.
+                                    <div class="info-section mt-4">
+                                        <h3>AROMA CHARACTER</h3>
+                                        <p>• Warm
+                                            <p>• Elegant
+                                                <p>• Sensual
+                                                    <p>• Mewah dan tidak Pasaran
+                                    </div>
+                                    <div class="info-section mt-4">
+                                        <h3>MORE INFORMATION</h3>
+                                        <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi kami melalui:</p>
+                                        <ul>
+                                            <li>Instagram : @guardian_id</li>
+                                            <li>Website : https://wwww.guardianindonesia.co.id</li>
+
+                                        </ul>
+                                    </div>
                             </div>
                         </div>
                     </div>
-            </div>
 
-            <!-- =========== Scripts =========  -->
-            <script src="assets/js/main.js"></script>
-            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+                    <!-- =========== Scripts =========  -->
+                    <script src="assets/js/main.js"></script>
+                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
