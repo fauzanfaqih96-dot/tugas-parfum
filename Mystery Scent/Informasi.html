@@ -89,13 +89,6 @@
             margin-bottom: 15px;
         }
         
-        .info-section {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
         .info-section h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
@@ -104,6 +97,68 @@
         .info-section p {
             font-size: 1rem;
             margin-bottom: 10px;
+        }
+        /* ===================== */
+        /* MOBILE RESPONSIVE */
+        /* ===================== */
+        
+        @media (max-width: 992px) {
+            .main {
+                padding: 40px 30px;
+            }
+            .info-section {
+                padding: 35px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                padding: 30px 20px;
+                background-attachment: scroll;
+                /* penting agar tidak berat di HP */
+            }
+            .info-section {
+                padding: 25px;
+                border-radius: 15px;
+            }
+            .info-section h1 {
+                font-size: 1.8rem;
+            }
+            .info-section h2 {
+                font-size: 1.4rem;
+            }
+            .info-section h3 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+            .info-section::before {
+                width: 250px;
+                height: 250px;
+                top: -80px;
+                right: -80px;
+                filter: blur(60px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main {
+                padding: 20px 15px;
+            }
+            .info-section {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
         }
     </style>
 </head>
