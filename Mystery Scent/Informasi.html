@@ -9,6 +9,8 @@
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <style>
         body {
@@ -20,19 +22,53 @@
         
         .info-section {
             position: relative;
-            background-image: url("assets/img/mis.jpg");
+            padding: 50px;
+            border-radius: 18px;
+            background: linear-gradient( 145deg, #0f0c29, #1a1a40, #2c1a47);
+            color: #ffffff;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+        }
+        
+        .main {
+            min-height: 100vh;
+            padding: 60px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(226, 200, 200, 0.8)), url("assets/img/misteri.jpeg") no-repeat center center fixed;
             background-size: cover;
             background-position: center;
-            border-radius: 10px;
-            color: #fff;
         }
+        /* Glow effect */
         
         .info-section::before {
             content: "";
             position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.705);
-            border-radius: 10px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent 70%);
+            top: -100px;
+            right: -100px;
+            filter: blur(80px);
+            z-index: 0;
+        }
+        /* Supaya text tetap di atas glow */
+        
+        .info-section * {
+            position: relative;
+            z-index: 1;
+        }
+        /* Heading Premium Style */
+        
+        .info-section h1,
+        .info-section h2,
+        .info-section h3 {
+            color: #ffd700;
+            letter-spacing: 1px;
+        }
+        /* List styling */
+        
+        .info-section ul li {
+            margin-bottom: 8px;
+            font-weight: 300;
         }
         
         .info-section * {
@@ -136,28 +172,107 @@
                                     secara perlahan, berkembang di kulit, dan semakin indah seiring waktu.
                                     <div class="info-section mt-4">
                                         <h3>AROMA CHARACTER</h3>
-                                        <p>• Warm
-                                            <p>• Elegant
-                                                <p>• Sensual
-                                                    <p>• Mewah dan tidak Pasaran
-                                    </div>
-                                    <div class="info-section mt-4">
-                                        <h3>MORE INFORMATION</h3>
-                                        <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi kami melalui:</p>
-                                        <ul>
-                                            <li>Instagram : @guardian_id</li>
-                                            <li>Website : https://wwww.guardianindonesia.co.id</li>
+                                        <ul>Warm</ul>
+                                        <ul>Elegant</ul>
+                                        <ul>Sensual</ul>
+                                        <ul>Mewah dan tidak Pasaran</ul>
 
+
+                                    </div>
+
+                                    <div class="info-section mt-4">
+                                        <h1>Jenis Aroma Parfum</h1>
+                                        <h2>a. Fresh</h2>
+                                        <ul>Keluarga aroma yang paling populer untuk penggunaan sehari-hari, terutama di iklim tropis seperti Indonesia.</ul>
+                                        <h3>Contoh aroma fresh :</h3>
+                                        <li>Citrus</li>
+                                        <ul>Aroma buah jeruk, lemon, bergamot. Kesannya enerjik dan bersih. (Contoh: Mykonos Slow Living).</ul>
+                                        <li>Aquatic/Marine</li>
+                                        <ul>Aroma yang mengingatkan pada udara laut atau air jernih. (Contoh: Braven Cool Water).</ul>
+                                        <li>Green</li>
+                                        <ul>Aroma daun yang diremas, rumput potong, atau teh. Kesannya alami dan menenangkan.
                                         </ul>
+                                        <h2>b. Floral</h2>
+                                        <h3>Arga aroma terbesar dan paling banyak disukai wanita, meski sekarang banyak digunakan untuk parfum unisex.
+                                        </h3>
+                                        <h3>Contoh aroma floral :</h3>
+                                        <li>White Floral</li>
+                                        <ul>Bunga melati (jasmine), sedap malam (tuberose), atau lily. Kesannya elegan dan bersih. (Contoh: Mykonos Luminos).</ul>
+                                        <li>Rose </li>
+                                        <ul>Aroma mawar yang klasik, bisa terasa manis atau segar seperti embun pagi. (Contoh: Mykonos Enchanted).
+                                        </ul>
+                                        <li>Powdery Floral </li>
+                                        <ul>Aroma bunga yang lembut seperti bedak bayi.</ul>
+                                        <h2>c. Oriental/Amber</h2>
+                                        <h3>Aroma yang memberikan kesan hangat, eksotis, mewah, dan biasanya sangat tahan lama.</h3>
+                                        <h3>Contoh aroma oriental/amber :</h3>
+                                        <li>Spicy</li>
+                                        <ul>Menggunakan rempah seperti kayu manis, cengkeh, atau lada merah (pink pepper). (Contoh: Scarlett Velvet Rouge).</ul>
+                                        <li>Amber </li>
+                                        <ul>Aroma yg manis dan kental dari getah pohon.</ul>
+                                        <li>Woody Oriental</li>
+                                        <ul>Perpaduan kayu-kayuan dengan sentuhan manis vanilla atau rempah</ul>
+                                        <h2>d. Woody</h2>
+                                        <h3>Memberikan kesan maskulin, tegas, dan membumi.</h3>
+                                        <h3>Contoh aroma woody :</h3>
+                                        <li>Sandalwood (Cendana) </li>
+                                        <ul>Wangi kayu yang lembut dan sedikit creamy.</ul>
+                                        <li>Cedarwood</li>
+                                        <ul>Wangi kayu yang kering seperti pensil kayu, memberikan struktur pada parfum</ul>
+                                        <li>Patchouli (Nilam)</li>
+                                        <ul>Aroma tanah yang basah atau kayu yang dalam.</ul>
+                                        <h2>e. Gourmand</h2>
+                                        <h3>Aroma makanan seperti vanila, cokelat, caramel, atau kopi</h3>
+                                        <h3>Contoh aroma gourmand :</h3>
+                                        <li>Vanilla, Cokelat, Karamel, atau Kopi. (Contoh: Scarlett Velvet Rouge memiliki notes kopi & vanilla).</li>
+                                        <h2>f. Fruity</h2>
+                                        <h3>Berbeda dengan citrus, fruity lebih menonjolkan aroma buah yang manis dan berair.</h3>
+                                        <h3>Contoh aroma fruity :</h3>
+                                        <li>Buah-buahan: Apel, beri, persik (peach), atau raspberry. (Contoh: SAFF & Co. Ostara).</li>
+
+                                        <div class="info-section mt-4 ">
+                                            <h1>JENIS PARFUM</h1>
+                                            <h3>a. Extrait de Parfume</h3>
+                                            <h3>b. Eau de Parfume</h3>
+                                            <h3>c. Eau de Toilette</h3>
+                                            <h3>d. Eau de Colegne</h3>
+                                            <h1>AROMA CHARACTER</h1>
+                                            <h3>• Extrait de Parfume
+                                            </h3>
+                                            <p>Konsentrasi minyak 20-40%, ketahanan 8-24 jam</p>
+                                            <h3>• Eau de Parfume
+                                            </h3>
+                                            <p>Konsentrasi minyak 15-20%, ketahanan 5-8 jam </p>
+                                            <h3>• Eau de Toilette
+                                            </h3>
+                                            <p>Konsentrasi minyak 5-15%, ketahanan 3-5 jam</p>
+                                            <h3>• Eau de Colegne</h3>
+                                            <p>Konsentrasi minyak 2-4%, ketahanan 2 jam</p>
+
+
+                                            <div class="info-section mt-4 ">
+                                                <h3>MORE INFORMATION
+                                                </h3>
+                                                <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi kami melalui:
+                                                </p>
+                                                <ul>
+
+                                                    <li>Instagram : @guardian_id
+                                                    </li>
+                                                    <li>Website : https://wwww.guardianindonesia.co.id
+                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- =========== Scripts =========  -->
-                    <script src="assets/js/main.js"></script>
-                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+                            <!-- =========== Scripts =========  -->
+                            <script src="assets/js/main.js "></script>
+                            <script type="module " src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js "></script>
+                            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js "></script>
 </body>
 
 </html>

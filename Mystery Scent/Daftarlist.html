@@ -9,6 +9,9 @@
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
     <style>
         * {
@@ -29,6 +32,61 @@
             gap: 12px;
             padding: 12px;
         }
+        /* Container List */
+        
+        .hospital-list {
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            border-radius: 25px;
+            margin: 30px 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        /* Judul */
+        
+        .hospital-list h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #ffffff;
+            position: relative;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        /* Garis bawah elegan */
+        
+        .hospital-list h1::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff8c00, #ff0080);
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 10px;
+        }
+        /* Efek glow halus */
+        
+        .hospital-list h1 {
+            text-shadow: 0 0 10px rgba(255, 0, 128, 0.4);
+        }
+        
+        .hospital-item h3 {
+            color: #ff0080;
+            text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+        }
+        
+        .hospital-item p {
+            color: #f1f1f1;
+        }
+        
+        .hospital-item strong {
+            color: #ff8c00;
+        }
+        
+        .price {
+            color: #00ffcc;
+            font-weight: bold;
+        }
         /* Search Form */
         
         #searchForm {
@@ -37,20 +95,6 @@
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
-        }
-        
-        #searchForm input {
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            padding: 12px;
-            font-size: 1rem;
-        }
-        
-        #searchForm button {
-            border-radius: 8px;
-            padding: 12px 24px;
-            font-weight: 500;
-            width: 100%;
         }
         
         .container-content {
@@ -165,8 +209,8 @@
                 height: 180px;
             }
             div img {
-                width: 450px;
-                aspect-ratio: 4/3;
+                width: 350px;
+                aspect-ratio: 3/4;
             }
             .price {
                 display: flex;
@@ -858,7 +902,9 @@
 
                                     <hr />
                                     <p class="price ">
-                                        <strong>Harga:</strong>                                         <span class="old-price ">Rp 52.000</span>                                         <span class="new-price ">Rp 36.000</span>
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp.52.000</span>
+                                        <span class="discount-price ">Rp.36.000</span>
                                     </p>
                                 </div>
                             </div>
@@ -950,113 +996,563 @@
                             </div>
                         </div>
 
+                        <div class="hospital-item" data-keywords="saff&co ext dp loui 30ml floral green fresh verbena violet leaf aldehyde rose peony muguet cedarwood musk">
+                            <img src="assets/img/loui.webp" alt="SAFF&CO EXT DP LOUI 30ML" />
+                            <div>
 
-                        <!-- No Results Message (hidden by default) -->
+                                <h3>SAFF&CO EXT DP LOUI 30ML </h3>
 
-                        <div id="noResults " class="no-results " style="display: none ">
+                                <p>
+                                    Kehijauan alam untuk menangkap nuansa segar dari tumbuhan, merekah seperti kelopak bunga yang perlahan terbuka , serta keharuman dan keindahan bunga yang semakin kuat terasa halus dan indah
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Verbena, Violet Leaf, Aldehyde.                                </p>
 
-                            <ion-icon name="search-outline "></ion-icon>
+                                    <p>
+                                        <strong>Middle Notes (Aroma Inti):</strong> Rose, Peony, Muguet                                 </p>
 
-                            <h3>No products found</h3>
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Cedarwood, Musk
+                                        <hr />
+                                        <p class="price">
+                                            <strong>Harga:</strong>
+                                            <span class="old-price">Rp 219.600</span>
+                                            <span class="discount-price">Rp 183.000</span>
+                                        </p>
+                            </div>
+                        </div>
 
-                            <p>Try searching with different keywords</p>
+                        <div class="hospital-item" data-keywords=" saff&co ext dp s.o.t.b 30ml floral white floral tropical mandarin galbanum ylang ylang tuberose jasmine orange flower vanilla tonka bean musk">
+                            <img src="assets/img/ostb.webp" alt="SAFF & CO EXT DP S.O.T.B 30 ML" />
+                            <div>
+
+                                <h3> SAFF & CO EXT DP S.O.T.B 30 ML </h3>
+
+                                <p>
+                                    S.O.T.B sering disebut sebagai salah satu parfum lokal terbaik untuk kategori wangi bunga putih (white floral) yang dipadukan dengan sentuhan tropis
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Mandarin, Galbanum, Ylang Ylang (Memberikan kesan segar di awal).                                 </p>
+
+                                    <p>
+                                        <strong>Middle Notes (Aroma Inti):</strong> Tuberose, Jasmine, Orange Flower (Inti wangi bunga putih yang dominan).                                 </p>
+
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Tonka Bean, Musk (Memberikan kesan manis, hangat, dan lembut di akhir).                                 </p>
+
+                                    <hr />
+                                    <p class="price">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price"> Rp 297.000</span>
+                                        <span class="discount-price">Rp 247.500</span>
+                                    </p>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item" data-keywords=" saff&co ext dp ostara 30ml floral fruity raspberry passionfruit pear cassis buds lily of the valley amber patchouli heliotrope">
+                            <img src="assets/img/ostara.webp" alt="SAFF&CO EXT DP OSTARA 30ML" />
+                            <div>
+
+                                <h3>SAFF&CO EXT DP OSTARA 30ML</h3>
+
+                                <p>
+                                    Sang Dewi Musim Semi Celtic, melambangkan kehadiran musim semi dan awal yang baru. Menuangkan kecantikan surgawinya ke dalam ramuan memikat dari raspberry dan markisa, OSTARA membawa Anda dalam perjalanan yang menakjubkan, dan ditutup dengan aroma akhir
+                                    (drydown) yang paling memikat
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Raspberry, Passionfruit, Pear.                                 </p>
+
+                                    <p>
+                                        <strong>Middle Notes (Aroma Inti):</strong> Cassis Buds, Lily of the Valley                                 </p>
+
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Amber, Patchoul, Heliotrope       </p>
+
+                                    <hr />
+                                    <p class="price">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price">Rp 258.000 </span>
+                                        <span class="discount-price">Rp.215.000</span>
+                                    </p>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item" data-keywords=" grandeur tubbees edp choc 50ml chocolate vanilla amber musk sandalwood">
+                            <img src="assets/img/grandeur choclate.webp" alt="GRANDEUR TUBBEES EDP  CHOC 50ML" />
+                            <div>
+
+                                <h3>GRANDEUR TUBBEES EDP CHOC 50ML</h3>
+
+                                <p>
+                                    Choco berfokus pada aroma cokelat. Namun, ini bukan sekadar wangi cokelat biasa, melainkan perpaduan yang mengingatkan pada cokelat susu yang manis dan hangat.
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Milk Chocolate, Cocoa. (Ledakan aroma cokelat yang manis langsung tercium di awal).
+
+                                        <p>
+                                            <strong>Middle Notes (Aroma Inti):</strong> Vanilla, Spicy Notes. (Memberikan tekstur yang lebih dalam dan hangat agar wangi manisnya tidak membosankan).
+
+                                            <p>
+                                                <strong>Base Notes (Aroma Dasar):</strong> Amber, Musk, Sandalwood. (Memberikan ketahanan aroma di kulit dan kesan lembut di akhir).
+
+                                                <hr />
+                                                <p class="price">
+                                                    <strong>Harga:</strong>
+                                                    <span class="old-price">Rp 186.000</span>
+                                                    <span class="discount-price">Rp149.000</span>
+                                                </p>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item" data-keywords=" grandeur tubbees edp strawberry cheesecake 50ml strawberry cream cheese vanilla graham cracker crust sugar">
+                            <img src="assets/img/grandeur.webp" alt="GRANDEUR TUBBEES EDP STRAWBERRY CHEESECAKE 50ML" />
+                            <div>
+
+                                <h3>GRANDEUR TUBBEES EDP STRAWBERRY CHEESECAKE 50ML</h3>
+
+                                <p>
+                                    Strawberry Cheesecake adalah salah satu varian yang paling dicari dari seri Tubbees karena aromanya yang sangat spesifik menyerupai hidangan penutup (dessert).
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Fresh Strawberry dan sedikit sentuhan Zesty untuk memberikan kesan awal yang ceria.                                 </p>
+
+                                    <p>
+                                        <strong>Middle Notes (Aroma Inti):</strong> Creamy Cheese dan Butter. Di sinilah karakter "Cheesecake" muncul, memberikan aroma yang gurih dan lembut.
+                                        <p>
+                                            <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Graham Cracker Crust, dan Sugar. Memberikan sillage yang manis dan hangat seperti kue yang baru matang.                                </p>
+
+                                        <hr />
+                                        <p class="price">
+                                            <strong>Harga:</strong>
+                                            <span class="old-price">Rp 186.000</span>
+                                            <span class="discount-price">Rp 149.000</span>
+                                        </p>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item" data-keywords="mykonos ext de parfume luminos 50 ml bright floral ambery bergamot pink pepper green apple jasmine sambac tuberose lily of the valley amber musk sandalwood patchouli">
+                            <img src="assets/img/luminos.jpg" alt="MYKONOS EXT DE PARFUME LUMINOS 50 ML" />
+                            <div>
+
+                                <h3>MYKONOS EXT DE PARFUME LUMINOS 50 ML</h3>
+
+                                <p>
+                                    Luminos memiliki karakter Bright, Floral, dan Ambery. Parfum ini sering disebut sebagai aroma yang "mahal " dan "berkelas ". Kesannya seperti wanita atau pria yang rapi, berwibawa, namun tetap memiliki sisi hangat dan ramah.
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Bergamot, Pink Pepper, Green Apple. (Memberikan sensasi segar yang tajam dan sedikit manis buah di awal).                                 </p>
+
+                                    <p>
+                                        <strong>Middle Notes (Aroma Inti):</strong> Jasmine Sambac, Tuberose (Sedap Malam), Lily of the Valley. (Didominasi oleh white floral yang memberikan kesan feminin, bersih, dan elegan)
+                                    </p>
+
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Amber, Musk, Sandalwood, Patchouli. (Memberikan pondasi yang lembut, creamy, dan sangat tahan lama di kulit).                                 </p>
+
+                                    <hr />
+                                    <p class="price ">
+                                        <strong>Harga:</strong>
+                                        <span class="old-price ">Rp 271.700</span>
+                                        <span class="discount-price ">Rp 247.000</span>
+                                    </p>
+                            </div>
+                        </div>
+
+                        <div class="hospital-item " data-keywords=" mykonos verve edp chypre floral bergamot pear blackcurrant jasmine iris orange blossom vanilla patchouli amber musk ">
+                            <img src="assets/img/verve.png " alt="MYKONOS VERVE EAU DE PARFUM 50ML " />
+
+                            <h3>MYKONOS VERVE EAU DE PARFUM 50ML</h3>
+
+                            <p>
+                                Verve memiliki karakter Chypre & Floral. Ini bukan aroma bunga yang "manis imut ", melainkan aroma bunga yang tegas, elegan, dan sangat berwibawa.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Bergamot, Pear, Blackcurrant. (Memberikan kesan awal yang segar buah namun tidak terlalu manis).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Iris, Orange Blossom. (Sentuhan bunga putih yang mewah dan memberikan tekstur sedikit powdery).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Patchouli, Amber, Musk. (Memberikan kesan akhir yang hangat, dalam, dan sangat tahan lama).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 132.000</span>
+                                    <span class="discount-price ">Rp.120.000</span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" mykonos slow living edp citrus clean linen lemon neroli lavender cedarwood musk ">
+                        <img src="assets/img/slow lvng.png " alt="MYKONOS EDP SLOW LIVING " />
+                        <div>
+
+                            <h3>MYKONOS EDP SLOW LIVING</h3>
+
+                            <p>
+                                Slow Living dirancang untuk menangkap esensi hari libur yang tenang. Aromanya didominasi oleh perpaduan citrus yang segar (lemon Italia) dan aroma bersih seperti sabun atau linen yang dijemur di bawah sinar matahari (clean laundry). Parfum ini memberikan
+                                kesan sosok yang rapi, bersih, dan santai.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Lemon Amalfi, Bunga Lemon                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Neroli, Lavender                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Orcanox™, Musk, Kayu Cedar                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 183.000</span>
+                                    <span class="discount-price ">Rp.166.500</span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" mykonos vanilla cloud edp marshmallow powder vanilla milk heliotrope musk tonka bean ">
+                        <img src="assets/img/vanilla clouds.png " alt="MYKONOS VANILLA CLOUD EDP 50ML " />
+                        <div>
+
+                            <h3>MYKONOS VANILLA CLOUD EDP 50ML</h3>
+
+                            <p>
+                                Mykonos Vanila Cloud adalah salah satu varian best-seller dari lini parfum Mykonos yang dikenal dengan aroma manis yang lembut dan menenangkan.
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Marshmallow & Powder. (Memberikan kesan manis yang ringan seperti awan).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Vanilla, Milk, & Heliotrope. (Menciptakan nuansa creamy yang lembut).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Musk & Tonka Bean. (Memberikan ketahanan dan kesan hangat di akhir).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 151.000</span>
+                                    <span class="discount-price ">Rp 138.000</span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" scarlett velvet rouge edp oriental floral gourmand vanilla patchouli cedarwood mandarin pear pink pepper jasmine orange blossom coffee ">
+                        <img src="assets/img/velvet rouge.png" alt="SCARLETT EXT DP VELVET ROUGE 30ML" />
+                        <div>
+
+                            <h3>SCARLETT EXT DP VELVET ROUGE 30ML</h3>
+
+                            <p>
+                                Velvet Rouge memiliki karakter Oriental, Floral, dan Gourmand. Parfum ini dirancang untuk memberikan kesan yang berani, "pedas " manis, dan sangat feminin.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Mandarin, Pear, Pink Pepper. (Sentuhan awal yang segar namun langsung memberikan efek rempah yang).                                </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Orange Blossom, Coffee. (Kombinasi bunga putih dengan aroma kopi yang memberikan karakter candu).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Patchouli, Cedarwood. (Menutup dengan rasa manis vanilla yang dalam dan hangat di kulit).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.75.000
+                                    <span class="old-price "></span>
+                                    <span class="discount-price "></span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" scarlett golden elixir edp floral amber classy vanilla musk sandalwood ambergris ">
+                        <img src="assets/img/golden elixir.jpg " alt="SCARLETT EXT DP GOLDEN ELIXIR 30 ML " />
+                        <div>
+
+                            <h3>SCARLETT EXT DP GOLDEN ELIXIR 30 ML</h3>
+
+                            <p>
+                                Golden Elixir memiliki karakter Floral, Ambery, dan Classy. Parfum ini sering dikaitkan dengan aroma wanita yang matang, elegan, dan memiliki aura yang bersinar.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Saffron, Jasmine, Marigold. (Pembukaan yang mewah dengan sentuhan rempah saffon yang eksotis).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Amberwood, Ambergris. (Jantung aroma yang memberikan kedalaman, kesan hangat, dan sensasi "salty-sweet " yang mewah).                                </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Fir Resin, Cedarwood. (Memberikan pondasi kayu yang kokoh dan membuat parfum ini menempel sangat lama).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.75.000
+                                    <span class="old-price "></span>
+                                    <span class="discount-price "></span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" scarlett dreamy edp floral ambery musky bergamot mandarin ginger pear jasmine sambac tuberose orange flower amber musk vanilla patchouli ">
+                        <img src="assets/img/dreamy.jpg " alt="SCARLETT EAU DE PARFUM DREAMY 30 ML " />
+                        <div>
+
+                            <h3>SCARLETT EAU DE PARFUM DREAMY 30 ML</h3>
+
+                            <p>
+                                Dreamy memiliki karakter Floral, Ambery, dan Musky. Parfum ini sering disebut sebagai aroma "pelukan hangat " karena kelembutannya yang tidak menusuk hidung
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Bergamot, Mandarin, Ginger, Pear. (Pembukaan yang segar dengan sedikit sensasi hangat dari jahe).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Sambac, Tuberose, Orange Flower. (Hati bunga putih yang sangat lembut dan elegan).                                </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Amber, Musk, Vanilla, Patchouli. (Penutup yang manis, halus, dan memberikan efek powdery yang bertahan lama).                                </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.75.000
+                                    <span class="old-price "></span>
+                                    <span class="discount-price "></span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords="onix gratitude floral green powdery apple bergamot ozone lily of the valley rose jasmine white musk amber cedarwood ">
+                        <img src="assets/img/gratitiude.png " alt="ONIX EAU DE PARFUME GRATITUDE 30ML " />
+                        <div>
+
+                            <h3>ONIX EAU DE PARFUME GRATITUDE 30ML</h3>
+
+                            <p>
+                                Gratitude memiliki karakter Floral, Green, dan Powdery. Jika FWB terasa lebih "berani " dan "seksi ", Gratitude terasa lebih lembut, bersih, dan menenangkan.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Green Apple, Bergamot, Ozone. (Memberikan kesan udara segar dan buah yang ringan).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Lily of the Valley, Rose, Jasmine. (Sentuhan bunga putih yang memberikan kesan feminin dan bersih).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> White Musk, Amber, Cedarwood. (Menutup dengan aroma bedak yang halus dan hangat).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.129.000
+                                    <span class="old-price "></span>
+                                    <span class="discount-price "></span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords="kahf humbling forest edp woody cypress cedarwood patchouli sandalwood musk ">
+                        <img src="assets/img/kahf humbling forest.jpg " alt="KAHF HUMBLING FOREST EAU DE TOILETTE 35ML " />
+                        <div>
+
+                            <h3>KAHF HUMBLING FOREST EAU DE TOILETTE 35ML</h3>
+
+                            <p>
+                                Humbling Forest memiliki karakter Cypress & Cedarwood. Sesuai namanya, parfum ini dirancang untuk memberikan sensasi seperti sedang berjalan di tengah hutan pinus yang sejuk dan asri.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Cypress, Rosemary, Grapefruit. (Memberikan kesegaran herbal dan sedikit sentuhan sitrus di awal).                                </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Cedarwood, Guaiac Wood. (Jantung aroma kayu yang memberikan struktur maskulin yang kuat namun lembut).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Patchouli, Sandalwood, Musk. (Memberikan kesan akhir yang membumi, hangat, dan tahan lama di kulit).                              </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp 83.000
+                                    <span class="old-price "></span>
+                                    <span class="discount-price "></span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" kahf revered oud edp woody ambery oud rose lemon fruity amber gourmand musk cedarwood ">
+                        <img src="assets/img/kahf oud.webp" alt="KAHF REVERED OUD EAU DE TOILLETE 35ML " />
+                        <div>
+
+                            <h3>KAHF REVERED OUD EAU DE TOILLETE 35ML</h3>
+
+                            <p>
+                                Revered Oud memiliki karakter Woody & Ambery. Produk ini menghadirkan aroma Oud (kayu gaharu) yang biasanya sangat mahal, namun diolah menjadi lebih ringan dan modern sehingga cocok untuk penggunaan harian di iklim tropis.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Rose, Lemon, Fruity. (Sentuhan bunga mawar dan buah yang memberikan kesan mewah sejak semprotan pertama).                                </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Amber, Gourmand. (Memberikan rasa hangat dan sedikit manis yang candu).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Oud, Musk, Cedarwood. (Aroma kayu gaharu yang khas dan mendalam, memberikan kesan maskulin yang bertahan lama).                               </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp 83.000
+                                    <span class="old-price "><span>
+                                    <span class="discount-price "></span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" kahf true brotherhood edp oud ambery spicy cinnamon orange lemon tobacco cypress amber cedarwood musk ">
+                        <img src="assets/img/kahf true.jpg" alt="KAHF TRUE BROTHERHOOD EAU DE TOILETTE 35ML" />
+                        <div>
+
+                            <h3>KAHF TRUE BROTHERHOOD EAU DE TOILETTE 35ML</h3>
+
+                            <p>
+                                True Brotherhood memiliki karakter Oud & Amber dengan sentuhan Spicy. Parfum ini dirancang untuk mencerminkan kehangatan persaudaraan dan kebersamaan.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Cinnamon (Kayu Manis), Orange, Lemon. (Perpaduan rempah hangat dan kesegaran sitrus yang unik di awal).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Tobacco, Cypress. (Memberikan nuansa maskulin yang lebih dalam dan sedikit berasap/smoky).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Amber, Cedarwood, Musk. (Menutup dengan kehangatan kayu dan amber yang manis dan tenang).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>Rp.83.000
+                                    <span class="old-price "></span>
+                                    <span class="discount-price "></span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords="braven ext de parfume leather 100ml woody smoky powdery cardamom sage iris amber sandalwood patchouli">
+                        <img src="assets/img/leather.avif" alt="BRAVEN EXT DE PARFUME LEATHER 100ML" />
+                        <div>
+
+                            <h3>BRAVEN EXT DE PARFUME LEATHER 100ML</h3>
+
+                            <p>
+                                Leather memberikan kesan yang Maskulin, Bold, dan Sophisticated. Ini bukan tipe aroma segar "sporty ", melainkan aroma yang memberikan kesan pria mapan, berwibawa, dan misterius.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Cardamom, Sage. (Memberikan kesan rempah yang hangat dan aromatik di awal).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> VLeather, Iris. (Jantung aroma yang memberikan tekstur "smoky " dan sedikit powdery yang mewah)..                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Amber, Sandalwood, Patchouli. (Memberikan akhir yang dalam, tahan lama, dan maskulin).                                </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 78.000</span>
+                                    <span class="discount-price ">Rp 61.500</span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" braven ext de parfume tobacco 100ml warm sweet woody tobacco leaf spicy notes vanilla cacao tonka bean dried fruits woody notes ">
+                        <img src="assets/img/tobaco.avif" alt="BRAVEN EXT DE PARFUME TOBACCO 100ML " />
+                        <div>
+
+                            <h3>BRAVEN EXT DE PARFUME TOBACCO 100ML</h3>
+
+                            <p>
+                                Tobacco memiliki karakter Warm, Sweet, dan Woody. Aroma ini tidak berbau seperti rokok, melainkan seperti daun tembakau kering yang manis (seperti cerutu premium) yang dipadukan dengan vanilla atau rempah.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Tobacco Leaf, Spicy Notes. (Aroma tembakau yang kuat langsung terasa di awal dengan sentuhan rempah).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Vanilla, Cacao, Tonka Bean. (Memberikan nuansa manis yang creamy dan lezat/gourmand).                                </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Dried Fruits, Woody Notes. (Memberikan kesan akhir yang dalam, matang, dan sangat maskulin).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 78.000</span>
+                                    <span class="discount-price ">Rp 61.500</span>
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="hospital-item " data-keywords=" braven edp code cool water 100ml aromatic aquatic mint lavender coriander rosemary geranium neroli jasmine sandalwood cedarwood musk amber ">
+                        <img src="assets/img/cool water.jpg" alt="BRAVEN EDP CODE COOL WATER 100ML" />
+                        <div>
+
+                            <h3>BRAVEN EDP CODE COOL WATER 100ML</h3>
+
+                            <p>
+                                Braven Code - Cool Water dirancang untuk memberikan kesan pria yang aktif, bersih, dan maskulin. Aromanya sangat identik dengan nuansa Aromatic Aquatic, mengingatkan pada kesegaran air laut dan udara pegunungan. Ini adalah tipe aroma "aman " yang disukai
+                                hampir semua orang.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Mint, Lavender, Coriander, dan Rosemary (Memberikan ledakan kesegaran herbal dan sensasi dingin di awal).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Geranium, Neroli, Jasmine, dan Sandalwood (Sentuhan bunga maskulin yang menyeimbangkan kesegaran sitrus).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Cedarwood, Musk, dan Amber (Memberikan kesan akhir yang hangat, maskulin, dan bersih di kulit).                                 </p>
+
+                                <hr />
+                                <p class="price ">
+                                    <strong>Harga:</strong>
+                                    <span class="old-price ">Rp 47.000</span>
+                                    <span class="discount-price ">Rp 36.000</span>
+                                </p>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- =========== Scripts =========  -->
-            <!-- <script src="assets/js/main.js"></script> -->
-            <!-- Scripts -->
-            <script>
-                // Toggle Navigation
-                let toggle = document.querySelector(".toggle");
-                let navigation = document.querySelector(".navigation");
-                let main = document.querySelector(".main");
-
-                toggle.onclick = function() {
-                    navigation.classList.toggle("active");
-                };
-
-                // Close navigation when clicking outside on mobile
-                document.addEventListener("click", function(event) {
-                    if (window.innerWidth <= 768) {
-                        if (!navigation.contains(event.target) &&
-                            !toggle.contains(event.target)
-                        ) {
-                            navigation.classList.remove("active");
-                        }
-                    }
-                });
-
-                // Search Functionality
-                function searchProducts() {
-                    const searchInput = document.getElementById("inputSearch");
-                    const searchTerm = searchInput.value.toLowerCase().trim();
-                    const productItems = document.querySelectorAll(".hospital-item");
-                    const noResults = document.getElementById("noResults");
-                    let foundCount = 0;
-
-                    if (searchTerm === "") {
-                        // Show all products if search is empty
-                        productItems.forEach((item) => {
-                            item.style.display = "flex";
-                        });
-                        noResults.style.display = "none";
-                        return;
-                    }
-
-                    productItems.forEach((item) => {
-                        const productName = item
-                            .querySelector("h3")
-                            .textContent.toLowerCase();
-                        const productDescription = item.textContent.toLowerCase();
-                        const keywords = item.getAttribute("data-keywords") || "";
-
-                        // Search in name, description, and keywords
-                        if (
-                            productName.includes(searchTerm) ||
-                            productDescription.includes(searchTerm) ||
-                            keywords.includes(searchTerm)
-                        ) {
-                            item.style.display = "flex";
-                            foundCount++;
-                        } else {
-                            item.style.display = "none";
-                        }
-                    });
-
-                    // Show/hide no results message
-                    if (foundCount === 0) {
-                        noResults.style.display = "block";
-                    } else {
-                        noResults.style.display = "none";
-                    }
-                }
-
-                // Allow search on Enter key
-                document
-                    .getElementById("inputSearch")
-                    .addEventListener("keypress", function(event) {
-                        if (event.key === "Enter") {
-                            event.preventDefault();
-                            searchProducts();
-                        }
-                    });
-
-                // Real-time search (optional - searches as you type)
-                document
-                    .getElementById("inputSearch")
-                    .addEventListener("input", function() {
-                        searchProducts();
-                    });
-            </script>
-
-            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         </div>
-</body>
+    </div>
 
-</html>
+
+
+    <script>
+        // Toggle Navigation
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+
+        if (toggle) {
+            toggle.onclick = function() {
+                navigation.classList.toggle("active");
+            };
+        }
+
+        document.addEventListener("click", function(event) {
+            if (window.innerWidth <= 768) {
+                if (!navigation.contains(event.target) &&
+                    !toggle.contains(event.target)) {
+                    navigation.classList.remove("active");
+                }
+            }
+        });
+
+        // Search Functionality
+        function searchProducts() {
+            const searchInput = document.getElementById("inputSearch");
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const productItems = document.querySelectorAll(".hospital-item");
+            const noResults = document.getElementById("noResults");
+            let foundCount = 0;
+
+            if (searchTerm === "") {
+                productItems.forEach((item) => {
+                    item.style.display = "";
+                });
+                noResults.style.display = "none";
+                return;
+            }
+
+            productItems.forEach((item) => {
+                const productName = item.textContent.toLowerCase();
+                const keywords = item.getAttribute("data-keywords") || "";
+
+                if (
+                    productName.includes(searchTerm) ||
+                    keywords.includes(searchTerm)
+                ) {
+                    item.style.display = "";
+                    foundCount++;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            noResults.style.display = foundCount === 0 ? "block" : "none";
+        }
+
+        document.getElementById("inputSearch")
+            .addEventListener("input", searchProducts);
+    </script>

@@ -39,10 +39,19 @@
             width: 100%;
         }
         
-        .login-container h2 {
+        .login-container {
+            width: 320px;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #1e1e2f, #2a2a45);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             text-align: center;
-            color: #333;
-            margin-bottom: 30px;
+        }
+        
+        .menu-title {
+            color: #fff;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
         }
         
         .menu {
@@ -51,31 +60,37 @@
         }
         
         .menu li {
-            background: #f0f8ff;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            transition: background 0.3s;
-        }
-        
-        .menu li:hover {
-            background: #d0f0fd;
+            margin: 15px 0;
         }
         
         .menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            display: block;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-weight: 500;
+            transition: 0.3s ease;
         }
         
-        .menu span {
-            margin-right: 10px;
+        .menu a ion-icon {
+            font-size: 20px;
+            color: #ffb347;
+            transition: 0.3s;
+        }
+        /* Hover Effect */
+        
+        .menu a:hover {
+            background: linear-gradient(90deg, #ff8c00, #ff0080);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 128, 0.4);
         }
         
-        .menu ion-icon {
-            vertical-align: middle;
+        .menu a:hover ion-icon {
+            color: #fff;
         }
         
         .navigation {
@@ -90,25 +105,31 @@
 
 <body>
     <div class="login-container">
-        <h2>MENU</h2>
+        <h2 class="menu-title"> MENU </h2>
+
         <ul class="menu">
             <li>
                 <a href="Rute.html">
-                    <span><ion-icon name="trophy-outline"></ion-icon></span>TOP BRANDS
+                    <ion-icon name="trophy-outline"></ion-icon>
+                    <span>Top Brands</span>
                 </a>
             </li>
+
             <li>
                 <a href="Informasi.html">
-                    <span><ion-icon name="bulb-outline"></ion-icon></span>INFORMATION
+                    <ion-icon name="bulb-outline"></ion-icon>
+                    <span>Information</span>
                 </a>
             </li>
+
             <li>
                 <a href="Daftarlist.html">
-                    <span><ion-icon name="trending-up-outline"></ion-icon></span
-            >TRENDING PRODUCTS
-          </a>
-        </li>
-      </ul>
+                    <ion-icon name="trending-up-outline"></ion-icon>
+                    <span>Trending Products</span>
+                </a>
+            </li>
+        </ul>
     </div>
-  </body>
+</body>
+
 </html>

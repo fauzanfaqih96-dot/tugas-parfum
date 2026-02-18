@@ -15,6 +15,9 @@
     <!-- Leaflet Routing Machine -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
     <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
     <style>
         #map {
@@ -23,10 +26,98 @@
             border-radius: 20px;
         }
         
-        .star {
-            color: gold;
-            /* Warna kuning untuk bintang */
-            font-size: 18px;
+        .best-btn {
+            font-size: 28px;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: #ffd700;
+            letter-spacing: 3px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+        /* Glow Effect */
+        
+        .best-btn::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient( 120deg, transparent, rgba(255, 220, 22, 0.4), transparent);
+            top: 0;
+            left: -100%;
+            transition: 0.6s;
+        }
+        /* Hover Effect */
+        
+        .best-btn:hover::before {
+            left: 100%;
+        }
+        
+        .best-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #111, #222);
+        }
+        /* MAIN BACKGROUND */
+        
+        .main {
+            min-height: 100vh;
+            padding: 40px;
+            background: linear-gradient(160deg, #0f0c29, #1a1a40, #24243e);
+        }
+        /* TOPBAR GLASS EFFECT */
+        
+        .topbar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+        
+        .toggle ion-icon {
+            font-size: 28px;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            transition: 0.3s ease;
+        }
+        
+        .toggle ion-icon:hover {
+            color: #ffffff;
+            transform: rotate(90deg);
+        }
+        /* WELCOME -EXT */
+        
+        .welcome-message h3 {
+            color: #ffd700;
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        /* Fade animation */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         #hospitalList {
@@ -68,7 +159,7 @@
         }
         
         img {
-            width: 200px;
+            width: 100px;
             cursor: pointer;
         }
         
@@ -80,8 +171,8 @@
         }
         
         .container-content {
-            width: 220px;
-            background: #fff;
+            width: 200px;
+            background: #e2e2e1;
             border-radius: 12px;
             padding: 16px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -97,7 +188,7 @@
         
         .container-content img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
             cursor: pointer;
@@ -110,7 +201,7 @@
         
         .container-content h1:last-child {
             font-size: 14px;
-            color: #555;
+            color: #b3e207;
         }
         /* POPUP */
         
@@ -160,6 +251,9 @@
                     <a href="#">
                         <span class="icon">
                 <ion-icon name="home-outline"></ion-icon>
+
+
+            
               </span>
                         <span class="title">HOME</span>
                     </a>
@@ -215,242 +309,275 @@
                 </header>
 
                 <form id="searchForm">
-                    <div class="form-group">
-                        <div class="row ml-1 mt-3">
-                            <button id="calculate" type="button" class="btn btn-primary" style="font-size: 50px">
-                  BEST SELLER !
-                </button>
-                        </div>
+                    <div class="form-group text-center mt-4">
+                        <button id="calculate" type="button" class="best-btn">
+         BEST SELLER !!
+        </button>
                     </div>
+                </form>
                 </form>
                 <div class="container-central">
                     <div class="container-content">
-                        <img src="assets/img/enc.webp" onclick="this.parentElement.querySelector('dialog').showModal()" />
-                        <h1>MYKONOS ENCHANTED EDP 50ml</h1>
+                        <img src="assets/img/slow lvng.png" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>MYKONOS SLOW LIVING EDP 50ml</h1>
                         <div>
-                            <span style="
-                    text-decoration: line-through;
-                    color: #999;
-                    font-size: 18px;
-                  ">
-                  181.000
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                  183.000
                 </span>
-                            <span style="
-                    color: #e63946;
-                    font-size: 18px;
-                    font-weight: bold;
-                    margin-left: 10px;
-                  ">
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
                   Rp.166.500
                 </span>
-                            <dialog class="popup">
-                                <img src="assets/img/enc.webp" style="width: 200px" />
-                                <h3>MYKONOS ENCHANTED EDP 50ml</h3>
-                                <p></p>
+                            <dialog class="popup ">
+                                <img src="assets/img/slow lvng.png" style="width: 100px " />
+                                <h1>MYKONOS SLOW LIVING EDP 50ml</h1>
                                 <p>
-                                    Aroma Mykonos Enchanted dimaksudkan untuk membawa kamu seolah berada di padang rumput yang indah seperti dalam dongeng — dikelilingi bunga yang lembut, cahaya hangat, dan suasana natural yang menenangkan. Ini bukan sekadar wangi; namun perjalanan emosional
-                                    yang menggugah kenangan positif, semangat, dan pesona feminin.
-                                </p>
-                                <p>
-                                    <strong>Top Notes (Aroma Awal):</strong> Mandarin Orange, segar, cerah, sedikit juicy.
-                                </p>
-                                <p>
-                                    <strong>Heart Notes (Aroma Inti):</strong> Peony, Rose, Violet, Peach, bunga lembut dan sedikit manis fruit-floral.
-                                </p>
-                                <p>
-                                    <strong>Base Notes (Aroma Dasar):</strong> Iris & Musk, memberikan kesan halus, lembut, dan tahan lama.
-                                </p>
+                                    Slow Living dirancang untuk menangkap esensi hari libur yang tenang. Aromanya didominasi oleh perpaduan citrus yang segar (lemon Italia) dan aroma bersih seperti sabun atau linen yang dijemur di bawah sinar matahari (clean laundry). Parfum ini memberikan
+                                    kesan sosok yang rapi, bersih, dan santai.
+                                    <p>
+                                        <strong>Top Notes (Aroma Awal):</strong> Lemon Amalfi, Bunga Lemon                                 </p>
 
-                                <button onclick="this.closest('dialog').close()">
+                                    <p>
+                                        <strong>Middle Notes (Aroma Inti):</strong> Neroli, Lavender                                 </p>
+
+                                    <p>
+                                        <strong>Base Notes (Aroma Dasar):</strong> Orcanox™, Musk, Kayu Cedar                                 </p>
+
+                                    <button onclick="this.closest( 'dialog').close() ">
                     Close
                   </button>
                             </dialog>
                         </div>
                     </div>
-                    <div class="container-content">
-                        <img src="assets/img/utopia.jpeg" onclick="this.parentElement.querySelector('dialog').showModal()" onclick="
-                  const d = this.nextElementSibling;
-                  d.showModal ? d.showModal() : d.setAttribute('open', '');
-                " />
-                        <h1>MYKONOS UTOPIA EDP 15ml</h1>
+                    <div class="container-content ">
+                        <img src="assets/img/luminos.jpg" onclick="this.parentElement.querySelector( 'dialog').showModal() " onclick=" const d=this.nextElementSibling; d.showModal ? d.showModal() : d.setAttribute( 'open', ''); " />
+                        <h1>MYKONOS LUMINOS EDP 50ML</h1>
 
                         <h1>
-                            <span style="
-                    text-decoration: line-through;
-                    color: #999;
-                    font-size: 18px;
-                  ">
-                  120.000
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                  271.700
                 </span>
-                            <span style="
-                    color: #e63946;
-                    font-size: 18px;
-                    font-weight: bold;
-                    margin-left: 10px;
-                  ">
-                  Rp.92.000
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
+                  Rp.247.000
                 </span>
                         </h1>
 
-                        <dialog class="popup">
-                            <img src="assets/img/utopia.jpeg" style="width: 200px" />
-                            <p>MYKONOS UTOPIA EDP 15ML</p>
+                        <dialog class="popup ">
+                            <img src="assets/img/luminos.jpg" style=" width: 100px " />
+                            <h1>MYKONOS LUMINOS EDP 50ML</h1>
                             <p>
-                                Utopia, terinspirasi dari konsep dunia yang sempurna, adalah wewangian yang diracik dengan cermat untuk mewujudkan esensi taman bunga putih yang ideal. Aromanya dibuka dengan pelukan bercahaya dari Calabrian bergamot dan semburan kesegaran citrus, lalu
-                                berpindah dengan lembut ke perpaduan ylang-ylang dan jasmine sambac, diperkaya sentuhan elegan iris serta nuansa akuatik yang menyegarkan. Wewangian ini kemudian menetap dengan dasar bernuansa kayu dan white musk yang manis,
-                                menciptakan aura yang sofisticat sekaligus menenangkan. Utopia menghadirkan pelarian dari rutinitas sehari-hari, mengajak Anda memasuki dunia bunga putih yang dreamy dan penuh ketenangan.
-                            </p>
-                            <p>
-                                <strong>Top Notes (Aroma Awal):</strong> Calabrian Bergamot, White Tea, Buah-buahan, Citrus
-                            </p>
-                            <p>
-                                <strong>Heart Notes (Aroma Inti):</strong> Iris, Jasmine Sambac, Ylang-ylang
-                            </p>
-                            <p>
-                                <strong>Base Notes (Aroma Dasar):</strong> Cedarwood, White Musk
-                            </p>
-                            <button onclick="this.closest('dialog').close()">Close</button>
+                                Luminos memiliki karakter Bright, Floral, dan Ambery. Parfum ini sering disebut sebagai aroma yang "mahal " dan "berkelas ". Kesannya seperti wanita atau pria yang rapi, berwibawa, namun tetap memiliki sisi hangat dan ramah.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Bergamot, Pink Pepper, Green Apple. (Memberikan sensasi segar yang tajam dan sedikit manis buah di awal).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine Sambac, Tuberose (Sedap Malam), Lily of the Valley. (Didominasi oleh white floral yang memberikan kesan feminin, bersih, dan elegan)
+                                </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Amber, Musk, Sandalwood, Patchouli. (Memberikan pondasi yang lembut, creamy, dan sangat tahan lama di kulit).                                 </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
                         </dialog>
                     </div>
 
-                    <div class="container-content">
-                        <img src="assets/img/paradise.jpg" onclick="this.parentElement.querySelector('dialog').showModal()" />
-                        <h1>MYKONOS PARADISE EDP 50ml</h1>
+                    <div class="container-content ">
+                        <img src="assets/img/verve.png" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>MYKONOS VERVE EDP 50ml</h1>
                         <h1>
-                            <span style="
-                    text-decoration: line-through;
-                    color: #999;
-                    font-size: 18px;
-                  ">
-                  171.000
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                  132.000
                 </span>
-                            <span style="
-                    color: #e63946;
-                    font-size: 18px;
-                    font-weight: bold;
-                    margin-left: 10px;
-                  ">
-                  Rp.157.000
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
+                  Rp.120.000
                 </span>
                         </h1>
 
-                        <dialog class="popup">
-                            <img src="assets/img/paradise.jpg" style="width: 200px" />
-                            <p>MYKONOS PARADISE EDP 50ML</p>
+                        <dialog class="popup ">
+                            <img src="assets/img/verve.png" style="width: 200px " />
+                            <h1>MYKONOS VERVE EDP 50ML</h1>
                             <p>
-                                Bayangkan sore hari yang cerah, Anda menyeruput segelas piña colada dingin di tepi laut Karibia berwarna turquoise yang jernih, dikelilingi oleh harum pepohonan frangipani Bali. Top notes membuka suasana liburan tropis dengan ragam buah-buahan segar yang
-                                asam-manis. Tropis, cerah, menyegarkan, dan juicy, dengan sentuhan creamy yang sensual dari kelapa. Wewangian ini kemudian bertransisi dengan indah menjadi sensasi floral yang creamy, menonjolkan nuansa bunga putih. Kelembutan
-                                kelapa tetap bertahan, memperkaya manisnya bunga frangipani dan kesegaran jasmine. Dry down-nya terasa menenangkan, terapeutik, dan sensual, sementara aroma buah meninggalkan jejak cerah yang lembut.
-                            </p>
-                            <p>
-                                <strong>Top Notes (Aroma Awal):</strong> Kelapa, Jeruk Mandarin, Pir, Nanas.
-                            </p>
-                            <p>
-                                <strong>Heart Notes (Aroma Inti):</strong> Frangipani, Jasmine, Lily.
-                            </p>
-                            <p>
-                                <strong>Base Notes (Aroma Dasar):</strong> Amber, Vanila, Nuansa Kayu.
-                            </p>
-                            <button onclick="this.closest('dialog').close()">Close</button>
+                                Verve memiliki karakter Chypre & Floral. Ini bukan aroma bunga yang "manis imut ", melainkan aroma bunga yang tegas, elegan, dan sangat berwibawa.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Bergamot, Pear, Blackcurrant. (Memberikan kesan awal yang segar buah namun tidak terlalu manis).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Iris, Orange Blossom. (Sentuhan bunga putih yang mewah dan memberikan tekstur sedikit powdery).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Patchouli, Amber, Musk. (Memberikan kesan akhir yang hangat, dalam, dan sangat tahan lama).                                 </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
                         </dialog>
                     </div>
 
-                    <div class="container-content">
-                        <img src="assets/img/metaverse.jpg" onclick="this.parentElement.querySelector('dialog').showModal()" />
-                        <h1>HINT METAVERSE EDP 50ML</h1>
+                    <div class="container-content ">
+                        <img src="assets/img/ostb.webp " onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>SAFF & CO S.O.T.B EDP 30ML</h1>
                         <h1>
-                            <span style="
-                    text-decoration: line-through;
-                    color: #999;
-                    font-size: 18px;
-                  ">
-                  277.000
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                    297.000
                 </span>
-                            <span style="
-                    color: #e63946;
-                    font-size: 18px;
-                    font-weight: bold;
-                    margin-left: 10px;
-                  ">
-                  Rp.193.500
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
+                    Rp.247.500
                 </span>
                         </h1>
-                        <dialog class="popup">
-                            <img src="assets/img/metaverse.jpg" style="width: 200px" />
-                            <p> Hint Metaverse memiliki karakter Fruity-Floral dengan sentuhan Aldehydic yang sangat kuat, memberikan kesan "Soapy" atau wangi bersih seperti sabun/laundry mewah.                                 </p>
+                        <dialog class="popup ">
+                            <img src="assets/img/ostb.webp " style="width: 200px " />
 
                             <p>
-                                <strong>Top Notes (Aroma Awal):</strong> Ginger (Jahe), Aldehydes, dan Red Fruits. (Memberikan sensasi segar, sedikit spicy, dan sangat bersih di awal).                               </p>
+                                S.O.T.B sering disebut sebagai salah satu parfum lokal terbaik untuk kategori wangi bunga putih (white floral) yang dipadukan dengan sentuhan tropis
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Mandarin, Galbanum, Ylang Ylang (Memberikan kesan segar di awal).                                 </p>
 
-                            <p>
-                                <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Orange Blossom, dan Tuberose. (Nuansa bunga putih yang elegan namun tidak terlalu berat).                                 </p>
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Tuberose, Jasmine, Orange Flower (Inti wangi bunga putih yang dominan).                                 </p>
 
-                            <p>
-                                <strong>Base Notes (Aroma Dasar):</strong> Patchouli, Incense, Vanilla, Honey, dan Vetiver. (Memberikan kedalaman aroma yang sedikit manis, hangat, dan bersahaja).                               </p>
-                            </p>
-                            <button onclick="this.closest('dialog').close()">Close</button>
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Tonka Bean, Musk (Memberikan kesan manis, hangat, dan lembut di akhir).                                 </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
                         </dialog>
                     </div>
 
-                    <div class="container-content">
-                        <img src="assets/img/scarlet euphoria.png" onclick="this.parentElement.querySelector('dialog').showModal()" />
-                        <h1>SCARLETT EUPHORIA EDP 30ML</h1>
-                        <h1>Rp.75.000</h1>
+                    <div class="container-content ">
+                        <img src="assets/img/velvet rouge.png" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>SCRLETT EDP VELVET ROUGE 30ML</h1>
+                        <h1>
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                    
+                </span>
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
+                    Rp.75.000
+                </span>
+                        </h1>
+                        <dialog class="popup ">
+                            <img src="assets/img/velvet rouge.png" style="width: 200px " />
 
-                        <dialog class="popup">
-                            <img src="assets/img/scarlet euphoria.png" style="width: 200px" />
-                            <p> Varian ini cocok untuk Anda yang menyukai wangi yang memberikan kesan mewah, dewasa, dan berkelas.Inspirasi: Sering disebut sebagai dupe dari Maison Francis Kurkdjian (MFK) Baccarat Rouge 540.
-                            </p>
-
+                            <h1>SCARLETT EDP VELVET ROUGE 30ML</h1>
                             <p>
-                                <strong>Top Notes (Aroma Awal):</strong> Neroli, Pear, Mandarin.                                 </p>
+                                Velvet Rouge memiliki karakter Oriental, Floral, dan Gourmand. Parfum ini dirancang untuk memberikan kesan yang berani, "pedas " manis, dan sangat feminin.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Mandarin, Pear, Pink Pepper. (Sentuhan awal yang segar namun langsung memberikan efek rempah yang).                                </p>
 
-                            <p>
-                                <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Orange Blossom, Solar.                                 </p>
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Jasmine, Orange Blossom, Coffee. (Kombinasi bunga putih dengan aroma kopi yang memberikan karakter candu).                                 </p>
 
-                            <p>
-                                <strong>Base Notes (Aroma Dasar):</strong> Amber, Woody, Musk.                                 </p>
-                            </p>
-                            <button onclick="this.closest('dialog').close()">Close</button>
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Vanilla, Patchouli, Cedarwood. (Menutup dengan rasa manis vanilla yang dalam dan hangat di kulit).                                 </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
                         </dialog>
                     </div>
 
-                    <div class="container-content">
-                        <img src="assets/img/fwb.png" onclick="this.parentElement.querySelector('dialog').showModal()" />
-                        <h1>ONIX FWB EDP 30ML</h1>
-                        <h1>Rp.129.000</h1>
-
-                        <dialog class="popup">
-                            <img src="assets/img/fwb.png" style="width: 200px" />
-                            <p>Onix FWB adalah parfum Eau de Parfum (EDP) dengan aroma segar, manis, dan hangat, cocok untuk kamu yang ingin tampil fresh namun tetap berkarakter sepanjang hari. Parfum ini hadir sebagai pilihan unisex, artinya bisa dipakai
-                                oleh pria maupun wanita. FWB merupakan singkatan yang sering diinterpretasikan sebagai wangi yang Fresh, Warm, dan Bold (percaya diri) — karena aroma yang menyenangkan dan mudah diterima banyak orang.
-                            </p>
-
-                            <p>
-                                <strong>Top Notes (Aroma Awal):</strong>Bergamot, Lemon, Orange, Apple, Green Tea Memberi kesan segara dan ceria di awal semprotan, seperti aroma citrus dan buah yang ringan.                               </p>
-
-                            <p>
-                                <strong>Middle Notes (Aroma Inti):</strong>Freesia, White Floral, Amber, Peach, Coconut Lapisan tengah yang menghadirkan keseimbangan floral lembut dan buah yang juicy, menciptakan wangi yang feminin namun hangat.
-                            </p>
+                    <div class="container-content ">
+                        <img src="assets/img/vanilla clouds.png" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>MYKONOS VANILLA CLOUDS EDP 50ML</h1>
+                        <h1>
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                    151.000
+                </span>
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
+                    Rp.138.000
+                </span>
+                        </h1>
+                        <dialog class="popup ">
+                            <img src="assets/img/vanilla clouds.png " style="width: 200px " />
+                            <h3>MYKONOS VANILLA CLOUD EDP 50ML</h3>
 
                             <p>
-                                <strong>Base Notes (Aroma Dasar):</strong>Amber, Vetiver, Musk, Vanilla, Cedarwood, Caramel Jejak akhir yang hangat, manis, dan sedikit woody, memberikan aroma yang tahan lama dan memikat.
-                            </p>
-                            </p>
-                            <button onclick="this.closest('dialog').close()">Close</button>
+                                Mykonos Vanila Cloud adalah salah satu varian best-seller dari lini parfum Mykonos yang dikenal dengan aroma manis yang lembut dan menenangkan.
+
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Marshmallow & Powder. (Memberikan kesan manis yang ringan seperti awan).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Vanilla, Milk, & Heliotrope. (Menciptakan nuansa creamy yang lembut).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Musk & Tonka Bean. (Memberikan ketahanan dan kesan hangat di akhir).                                 </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
+                        </dialog>
+                    </div>
+
+                    <div class="container-content ">
+                        <img src="assets/img/cool water.jpg" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>BRAVEN EDP CODE COOL WATER 30ML</h1>
+                        <h1>
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                    47.000
+                </span>
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
+                    Rp.36.000
+                </span>
+                        </h1>
+                        <dialog class="popup ">
+                            <img src="assets/img/cool water.jpg" style="width: 100px " />
+                            <h3>BRAVEN EDP CODE COOL WATER 100ML</h3>
+
+                            <p>
+                                Braven Code - Cool Water dirancang untuk memberikan kesan pria yang aktif, bersih, dan maskulin. Aromanya sangat identik dengan nuansa Aromatic Aquatic, mengingatkan pada kesegaran air laut dan udara pegunungan. Ini adalah tipe aroma " aman " yang disukai
+                                hampir semua orang.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Mint, Lavender, Coriander, dan Rosemary (Memberikan ledakan kesegaran herbal dan sensasi dingin di awal).                                 </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Geranium, Neroli, Jasmine, dan Sandalwood (Sentuhan bunga maskulin yang menyeimbangkan kesegaran sitrus).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Cedarwood, Musk, dan Amber (Memberikan kesan akhir yang hangat, maskulin, dan bersih di kulit).                                 </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
+                        </dialog>
+                    </div>
+
+
+                    <div class="container-content ">
+                        <img src="assets/img/kahf oud.webp" onclick="this.parentElement.querySelector( 'dialog').showModal() " />
+                        <h1>KAHF REVERED OUD EDP 35ML</h1>
+                        <h1>
+                            <span style=" text-decoration: line-through; color: #999; font-size: 18px; ">
+                
+                </span>
+                            <span style=" color: #e63946; font-size: 18px; font-weight: bold; margin-left: 10px; ">
+                    Rp.83.000
+                </span>
+                        </h1>
+
+                        <dialog class="popup ">
+                            <img src="assets/img/kahf oud.webp" style="width: 200px " />
+                            <h3>KAHF REVERED OUD EAU DE TOILLETE 35ML</h3>
+
+                            <p>
+                                Revered Oud memiliki karakter Woody & Ambery. Produk ini menghadirkan aroma Oud (kayu gaharu) yang biasanya sangat mahal, namun diolah menjadi lebih ringan dan modern sehingga cocok untuk penggunaan harian di iklim tropis.
+                                <p>
+                                    <strong>Top Notes (Aroma Awal):</strong> Rose, Lemon, Fruity. (Sentuhan bunga mawar dan buah yang memberikan kesan mewah sejak semprotan pertama).                                </p>
+
+                                <p>
+                                    <strong>Middle Notes (Aroma Inti):</strong> Amber, Gourmand. (Memberikan rasa hangat dan sedikit manis yang candu).                                 </p>
+
+                                <p>
+                                    <strong>Base Notes (Aroma Dasar):</strong> Oud, Musk, Cedarwood. (Aroma kayu gaharu yang khas dan mendalam, memberikan kesan maskulin yang bertahan lama).                               </p>
+
+                                <button onclick="this.closest( 'dialog').close() ">Close</button>
                         </dialog>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 <!-- =========== Scripts =========  -->
-<script src="assets/js/main.js"></script>
-<script type="module" src="script.js"></script>
+<script src="assets/js/main.js "></script>
+<script type="module " src="script.js "></script>
 
 <!-- ====== ionicons ======= -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="module " src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js "></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js "></script>
+
+</html>
+
+</html>
+
+</html>
 
 </html>
